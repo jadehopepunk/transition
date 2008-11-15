@@ -1,0 +1,7 @@
+<h1>New Map Region</h1>
+
+<% form_for :map_region, :url => admin_map_regions_path, :method => :post, :builder => LabelledBuilder do |f| %>
+	<%= f.text_field :name %>
+
+	<%= form_footer(:map_region, :cancel_link => admin_map_regions_path) %>
+<% end %>

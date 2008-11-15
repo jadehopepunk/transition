@@ -1,0 +1,112 @@
+body {
+  font-family: sans-serif;
+}
+
+p {
+  line-height: 140%;
+  
+}
+
+h1 {
+  color: green;
+}
+
+.body_container {
+  width: 1000px;  
+}
+
+.page_content {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.draft {
+  color: #999;
+  text-align: center;
+  padding: 20px 100px;
+}
+
+.two_columns {
+  width: 960px;
+  overflow: hidden;
+}
+
+.two_columns .column1 {
+  width: 465px;
+  float: left;
+  margin-right: 20px;
+}
+
+.two_columns .column2 {
+  width: 465px;
+  float: left;
+}
+
+.two_columns .column_sub_section {
+  margin-bottom: 1em;
+}
+
+.two_columns h2, .two_columns p {
+  margin-top: 0;
+}
+
+div.summary {
+  padding: 10px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin-bottom: 30px;
+}
+
+div.summary strong.one {
+  font-size: 130%;
+  font-weight: normal;
+}
+
+div.summary strong.two {
+  font-size: 160%;  
+}
+
+div.summary strong.three {
+  font-size: 200%;
+}
+
+div.change_notice {
+  margin-bottom: 1em;
+  width: 460px;
+  overflow: hidden;
+}
+
+div.change_notice .group {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+div.change_notice img.group_icon {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  float: left;
+  margin-right: 5px;
+}
+
+div.change_notice .change_time {
+  color: #999;
+  font-size: 80%;
+}
+
+.image_set img {
+  border: 1px solid #000;
+}
+
+.google_map {
+  border: 2px solid #333;
+}
+
+.two_columns .google_map {
+  width: 430px; 
+  height: 500px; 
+}
+
+.overview {
+  font-size: 120%;
+}

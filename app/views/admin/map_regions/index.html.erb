@@ -1,0 +1,13 @@
+<h1>Map Regions</h1>
+
+<div class="record_index">
+	<% for map_region in @map_regions %>
+		<div class="record_row">
+			<span class="name"><%= link_to h(map_region.name), admin_map_region_path(map_region) %></span>
+			<%= link_to "(view)", map_region_path(map_region) %>
+			<%= link_to "(delete)", admin_map_region_path(map_region), :method => :delete, :confirm => "Are you sure??!" %>
+		</div>
+	<% end %>
+</div>
+
+<%= link_to "Create New", new_admin_map_region_path %>

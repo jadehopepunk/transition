@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Transition Towns</title>
+		<%= stylesheet_link_tag 'application', :cache => true %>	
+		<%= yield :head %>
+	</head>
+	<body onload="<%= yield :body_load %>" onunload="<%= yield :body_unload %>">
+		<div class="body_container">
+			<div class="page_content">
+				<%= yield %>
+			</div>
+		</div>		
+	</body>
+</html>

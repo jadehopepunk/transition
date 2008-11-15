@@ -1,0 +1,22 @@
+<% content_for :head do %>
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= AppConfig.google_maps_key %>" type="text/javascript"></script>
+  <script type="text/javascript">
+    //<![CDATA[
+
+    function load() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map"));
+        map.setCenter(new GLatLng(-41.013066, 172.8), 5);
+				map.addControl(new GLargeMapControl());
+      }
+    }
+
+    //]]>
+  </script>			
+<% end %>
+<% content_for :body_load, "load()" %>
+<% content_for :body_unload, "GUnload()" %>
+
+<h1>Map Region</h1>
+
+<div id="map" style="width: 500px; height: 300px">google map goes here</div>

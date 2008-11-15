@@ -1,0 +1,2 @@
+module MapRegionsHelper
+end

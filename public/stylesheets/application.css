@@ -110,3 +110,12 @@ div.change_notice .change_time {
 .overview {
   font-size: 120%;
 }
+
+.google_map {
+  border: 2px solid black;
+}
+
+.subtitle {
+  font-size: small;
+  color: #666;
+}

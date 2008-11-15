@@ -1,0 +1,47 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #900;
+}
+
+div.header {
+  background-color: #F93;
+  padding: 10px;
+  border-bottom: solid #C33 2px;
+}
+
+div.header h1 {
+  margin: 0;
+}
+
+h1, h2 {
+  color: #900;  
+}
+
+.record_index {
+  margin-bottom: 1em;
+}
+
+.record_index .record_row {
+  background-color: #FC9;
+  padding: 4px;
+  text-align: right;
+}
+
+.record_index .record_row .info {
+  font-weight: bold;
+  float: left;
+}
+
+.record_index .record_row .buttons {
+  overflow: hidden;
+}
+
+.record_index .record_row .buttons a {
+  border-left: 2px solid black;
+  padding-left: 6px;
+  padding-right: 2px;
+}

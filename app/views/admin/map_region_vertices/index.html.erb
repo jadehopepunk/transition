@@ -17,6 +17,18 @@
 				  ], "#33CC33", 5, 1, "#33CC33", 0.3);
 				  map.addOverlay(polygon);
 				<% end %>
+				
+				GEvent.addListener(map, 'click', function(overlay, latlng) {
+					new Ajax.Request('<%= admin_map_region_map_region_vertices_path(@map_region) %>', 
+						{
+							asynchronous:true, 
+							evalScripts:true, 
+							method:'post',
+							parameters: 'authenticity_token=' + encodeURIComponent('<%= form_authenticity_token %>') +
+								'&latitude=' + encodeURIComponent(latlng.lat()) +
+								'&longitude=' + encodeURIComponent(latlng.lng())
+						});
+				});				
       }
     }
 
@@ -26,6 +38,17 @@
 <% content_for :body_load, "load()" %>
 <% content_for :body_unload, "GUnload()" %>
 
-<h1>Map Region</h1>
+
+<h2><%=h @map_region.name %> Boundary</h2>
 
 <div id="map" class="google_map" style="width: 500px; height: 300px">google map goes here</div>
+
+<h3>Boundary Coordinates <span class="subtitle">(Latitude, Longitude)</span></h3>
+
+
+<ul id="vertices">
+	<% for vertex in @map_region.vertices %>
+		<li><%= vertex.lat.inspect %>, <%= vertex.long %></li>
+	<% end %>
+</ul>
+

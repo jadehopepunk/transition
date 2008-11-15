@@ -1,4 +1,4 @@
-class Admin::MapRegionsController < ApplicationController
+class Admin::MapRegionsController <  Admin::AdminController
   before_filter :load_map_region, :only => :destroy
   
   def index

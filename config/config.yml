@@ -4,3 +4,7 @@ common:
 production:
   google_maps_key: not_set
   
+development:
+  
+test:
+  

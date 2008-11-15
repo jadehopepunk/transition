@@ -1,0 +1,188 @@
+  [4;36;1mSQL (0.000457)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.041120)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.022730)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002607)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000394)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.175779)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.240952)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.339348)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.710052)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.027677)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.383198)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMapRegions (20081115011328)
+  [4;36;1mSQL (0.524531)[0m   [0;1mCREATE TABLE `map_regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.596584)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081115011328')[0m
+Migrating to CreateMapRegionVertices (20081115011431)
+  [4;36;1mSQL (1.215493)[0m   [0;1mCREATE TABLE `map_region_vertices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `map_region_id` int(11) NOT NULL, `postion` int(11), `created_at` datetime, `updated_at` datetime, FOREIGN KEY (map_region_id) REFERENCES map_regions (id)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000718)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081115011431')[0m
+  [4;36;1mSQL (0.000632)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000305)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000436)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.242411)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mSQL (0.009143)[0m   [0;1mdescribe `map_region_vertices`[0m
+  [4;35;1mSQL (0.013672)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mSQL (0.019271)[0m   [0;1mSHOW CREATE TABLE `map_region_vertices`[0m
+  [4;35;1mSQL (0.121671)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mSQL (0.001663)[0m   [0;1mdescribe `map_regions`[0m
+  [4;35;1mSQL (0.000697)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mSQL (0.000267)[0m   [0;1mSHOW CREATE TABLE `map_regions`[0m
+  [4;36;1mSQL (0.000226)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000409)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000219)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000148)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.417113)[0m   [0;1mDROP DATABASE IF EXISTS `transition_test`[0m
+  [4;35;1mSQL (0.197044)[0m   [0mCREATE DATABASE `transition_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.013089)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.059652)[0m   [0;1mCREATE TABLE `map_region_vertices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `map_region_id` int(11) NOT NULL, `postion` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.252474)[0m   [0mCREATE INDEX `map_region_id` ON `map_region_vertices` (`map_region_id`)[0m
+  [4;36;1mSQL (0.000670)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002462)[0m   [0mCREATE TABLE `map_regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.090856)[0m   [0;1mALTER TABLE map_region_vertices ADD CONSTRAINT map_region_vertices_ibfk_1 FOREIGN KEY (map_region_id) REFERENCES map_regions (id)[0m
+  [4;35;1mSQL (0.000593)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.054541)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.048181)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.000546)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000449)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.021603)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20081115011431')[0m
+  [4;35;1mSQL (0.000702)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20081115011328')[0m
+  [4;36;1mSQL (0.001678)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000879)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000472)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000480)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000493)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMapRegionVertices (20081115011431)
+  [4;35;1mSQL (0.000549)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000266)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.905882)[0m   [0m SELECT constraint_name, table_name, column_name, referenced_table_name, referenced_column_name
+ FROM information_schema.key_column_usage
+ WHERE table_schema = SCHEMA()
+ AND referenced_table_schema = table_schema
+ ORDER BY constraint_name, ordinal_position;
+[0m
+  [4;36;1mSQL (0.054692)[0m   [0;1mDROP TABLE `map_region_vertices`[0m
+  [4;35;1mSQL (0.094297)[0m   [0mDELETE FROM schema_migrations WHERE version = '20081115011431'[0m
+  [4;36;1mSQL (0.000484)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000268)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000282)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001338)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mSQL (0.001913)[0m   [0;1mdescribe `map_regions`[0m
+  [4;35;1mSQL (0.000895)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mSHOW CREATE TABLE `map_regions`[0m
+  [4;35;1mSQL (0.000313)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000286)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMapRegions (20081115011328)
+Migrating to CreateMapRegionVertices (20081115011431)
+  [4;35;1mSQL (0.071916)[0m   [0mCREATE TABLE `map_region_vertices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `map_region_id` int(11) NOT NULL, `postion` int(11), `lat` decimal, `long` decimal, `created_at` datetime, `updated_at` datetime, FOREIGN KEY (map_region_id) REFERENCES map_regions (id)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.001184)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20081115011431')[0m
+  [4;36;1mSQL (0.000230)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000977)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000394)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.062285)[0m   [0;1mDROP DATABASE IF EXISTS `transition_test`[0m
+  [4;35;1mSQL (0.000655)[0m   [0mCREATE DATABASE `transition_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.000164)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000466)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002251)[0m   [0;1mCREATE TABLE `map_regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000445)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002501)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006234)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.000518)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000468)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.000685)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20081115011328')[0m
+  [4;36;1mSQL (0.000233)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000415)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000222)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000257)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.010314)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mSQL (0.019530)[0m   [0mdescribe `map_region_vertices`[0m
+  [4;36;1mSQL (0.012021)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mSQL (0.000448)[0m   [0mSHOW CREATE TABLE `map_region_vertices`[0m
+  [4;36;1mSQL (0.014270)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mSQL (0.002304)[0m   [0mdescribe `map_regions`[0m
+  [4;36;1mSQL (0.001428)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mSQL (0.000300)[0m   [0mSHOW CREATE TABLE `map_regions`[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.031532)[0m   [0mDROP DATABASE IF EXISTS `transition_test`[0m
+  [4;36;1mSQL (0.000535)[0m   [0;1mCREATE DATABASE `transition_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (0.000152)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000506)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.055983)[0m   [0mCREATE TABLE `map_region_vertices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `map_region_id` int(11) NOT NULL, `postion` int(11), `lat` integer, `long` integer, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.091147)[0m   [0;1mCREATE INDEX `map_region_id` ON `map_region_vertices` (`map_region_id`)[0m
+  [4;35;1mSQL (0.000601)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.053858)[0m   [0;1mCREATE TABLE `map_regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.260353)[0m   [0mALTER TABLE map_region_vertices ADD CONSTRAINT map_region_vertices_ibfk_1 FOREIGN KEY (map_region_id) REFERENCES map_regions (id)[0m
+  [4;36;1mSQL (0.000691)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.158456)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.055904)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.000567)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000459)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.014359)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20081115011431')[0m
+  [4;36;1mSQL (0.002429)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20081115011328')[0m
+  [4;36;1mSQL (0.000229)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000424)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000198)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000118)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.024068)[0m   [0;1mDROP DATABASE IF EXISTS `transition_test`[0m
+  [4;35;1mSQL (0.000616)[0m   [0mCREATE DATABASE `transition_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000383)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002669)[0m   [0;1mCREATE TABLE `map_region_vertices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `map_region_id` int(11) NOT NULL, `postion` int(11), `lat` integer, `long` integer, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.134896)[0m   [0mCREATE INDEX `map_region_id` ON `map_region_vertices` (`map_region_id`)[0m
+  [4;36;1mSQL (0.000425)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002357)[0m   [0mCREATE TABLE `map_regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.052194)[0m   [0;1mALTER TABLE map_region_vertices ADD CONSTRAINT map_region_vertices_ibfk_1 FOREIGN KEY (map_region_id) REFERENCES map_regions (id)[0m
+  [4;35;1mSQL (0.000687)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002621)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006042)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.000563)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000530)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.000594)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20081115011431')[0m
+  [4;35;1mSQL (0.000550)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20081115011328')[0m
+  [4;36;1mSQL (0.000229)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000414)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000217)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000112)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.018938)[0m   [0;1mDROP DATABASE IF EXISTS `transition_test`[0m
+  [4;35;1mSQL (0.000547)[0m   [0mCREATE DATABASE `transition_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000380)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002619)[0m   [0;1mCREATE TABLE `map_region_vertices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `map_region_id` int(11) NOT NULL, `postion` int(11), `lat` integer, `long` integer, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006940)[0m   [0mCREATE INDEX `map_region_id` ON `map_region_vertices` (`map_region_id`)[0m
+  [4;36;1mSQL (0.000455)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002282)[0m   [0mCREATE TABLE `map_regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.020150)[0m   [0;1mALTER TABLE map_region_vertices ADD CONSTRAINT map_region_vertices_ibfk_1 FOREIGN KEY (map_region_id) REFERENCES map_regions (id)[0m
+  [4;35;1mSQL (0.000531)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002169)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.005618)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.000501)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000465)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.000628)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20081115011431')[0m
+  [4;35;1mSQL (0.000525)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20081115011328')[0m
+  [4;36;1mSQL (0.000229)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000423)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000219)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000118)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.005053)[0m   [0;1mDROP DATABASE IF EXISTS `transition_test`[0m
+  [4;35;1mSQL (0.000585)[0m   [0mCREATE DATABASE `transition_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000459)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.019970)[0m   [0;1mCREATE TABLE `map_region_vertices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `map_region_id` int(11) NOT NULL, `postion` int(11), `lat` integer, `long` integer, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.031789)[0m   [0mCREATE INDEX `map_region_id` ON `map_region_vertices` (`map_region_id`)[0m
+  [4;36;1mSQL (0.000780)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002289)[0m   [0mCREATE TABLE `map_regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.031756)[0m   [0;1mALTER TABLE map_region_vertices ADD CONSTRAINT map_region_vertices_ibfk_1 FOREIGN KEY (map_region_id) REFERENCES map_regions (id)[0m
+  [4;35;1mSQL (0.000545)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002089)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006165)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.000566)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000474)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.000893)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20081115011431')[0m
+  [4;35;1mSQL (0.000609)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20081115011328')[0m

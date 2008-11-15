@@ -1,0 +1,44 @@
+  [4;36;1mSQL (0.000338)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.045034)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.131935)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.001707)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.027700)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES(NULL, '2008-11-15 01:19:55', '2008-11-15 01:19:55')[0m
+  [4;35;1mSQL (0.016608)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000978)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegionVertex Columns (0.024236)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.250364)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Create (0.000000)[0m   [0mMysql::Error: Column 'map_region_id' cannot be null: INSERT INTO `map_region_vertices` (`updated_at`, `map_region_id`, `postion`, `created_at`) VALUES('2008-11-15 01:19:56', NULL, NULL, '2008-11-15 01:19:56')[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000253)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000251)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.002307)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000413)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000312)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES(NULL, '2008-11-15 01:25:24', '2008-11-15 01:25:24')[0m
+  [4;35;1mSQL (0.000596)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000174)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000294)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-11-15 01:25:24', '2008-11-15 01:25:24')[0m
+  [4;36;1mMapRegionVertex Columns (0.000000)[0m   [0;1mMysql::Error: Table 'transition_test.map_region_vertices' doesn't exist: SHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mSQL (0.000758)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000256)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000075)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.002364)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000455)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000298)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES(NULL, '2008-11-15 01:25:47', '2008-11-15 01:25:47')[0m
+  [4;35;1mSQL (0.000559)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000169)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000243)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-11-15 01:25:47', '2008-11-15 01:25:47')[0m
+  [4;36;1mMapRegionVertex Columns (0.001513)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000862)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mSQL (0.000809)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000078)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.002317)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000444)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000422)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-11-15 01:28:52', '2008-11-15 01:28:52')[0m
+  [4;35;1mSQL (0.000578)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000181)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000289)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-11-15 01:28:52', '2008-11-15 01:28:52')[0m
+  [4;36;1mMapRegionVertex Columns (0.002218)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000714)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Create (0.029783)[0m   [0;1mINSERT INTO `map_region_vertices` (`updated_at`, `map_region_id`, `postion`, `lat`, `long`, `created_at`) VALUES('2008-11-15 01:28:52', 2, NULL, 1, 1, '2008-11-15 01:28:52')[0m
+  [4;35;1mSQL (0.000643)[0m   [0mROLLBACK[0m

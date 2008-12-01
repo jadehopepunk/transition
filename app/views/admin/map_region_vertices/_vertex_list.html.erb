@@ -1,0 +1,5 @@
+<ul id="vertex_list">
+	<% for vertex in vertex_list %>
+		<li id="<%= dom_id(vertex) %>"><%= vertex.lat.inspect %>, <%= vertex.long %></li>
+	<% end %>
+</ul>

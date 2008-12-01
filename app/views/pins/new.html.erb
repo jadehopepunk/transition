@@ -1,0 +1,50 @@
+<h2>Put something on the map</h2>
+
+<% form_for :pin, :url => pins_path, :method => :post, :builder => LabelledBuilder do |f| %>
+	<%= f.hidden_field :map_region_id %>
+
+	<p>We're excited about finding out about the resources available in our local community.</p>
+
+	<p>Does your household or business create a product or service that you might consider
+	selling, trading, swapping or gifting to others? Tell us about it, and we'll pop you on
+	our map of local goods and services.</p>
+
+	<%= error_messages_for :pin %>
+
+	<h3>We produce</h3>
+	
+	<%= error_message_on :pin, :base %>
+
+	<div class="checkbox_collection">
+		<%= f.check_box :grow_food, :label => "Food we grow" %>
+		<%= f.check_box :make_food, :label => "Food we make from local ingredients" %>
+		<%= f.check_box :sell_food, :label => "Local food for sale, produced by others" %>
+		<%= f.check_box :gardening_instruction, :label => "Gardening/Farming Interest or Instruction" %>
+		<%= f.check_box :gardening_products, :label => "Products for Gardeners or Farmers" %>		
+	</div>
+	
+	<%= f.text_area :description, :hint => "More detail, or some examples, of the boxes you ticked above" %>
+
+	<h3>Who we are</h3>	
+
+	<%= f.select :group_type, ["Household", "Business", "Organisation"], :label => "We are a" %>
+	
+	<%= f.text_field :name, :label => "Name(s)" %>
+	
+	<%= f.text_field :email_address, :hint => "Your email address is optional, but lets you come back and edit these details later" %>
+
+	<%= f.text_field :street_address %>
+	
+	<%= f.text_field :suburb %>
+
+	<%= f.text_field :city %>
+	
+	<%= form_footer(:pin, :cancel_link => map_region_path(@map_region)) %>
+<% end %>
+
+
+
+
+
+
+

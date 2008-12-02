@@ -3,7 +3,7 @@
 	<head>
 		<title>Transition Towns Admin</title>
 		<%= stylesheet_link_tag 'application', 'forms', 'admin', :cache => true %>	
-		<%= javascript_include_tag 'prototype', :cache => true %>
+		<%= render :partial => 'layouts/head' %>
 		<%= yield :head %>
 	</head>
 	<body onload="<%= yield :body_load %>" onunload="<%= yield :body_unload %>">

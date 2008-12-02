@@ -2,7 +2,7 @@ class PinsController < ApplicationController
   before_filter :load_map_region
   
   def new
-    @pin = Pin.new(:map_region_id => params[:map_region_id])
+    @pin = Pin.new(:map_region_id => params[:map_region_id], :country => "New Zealand")
   end
   
   def create

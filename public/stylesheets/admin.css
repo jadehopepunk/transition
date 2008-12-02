@@ -45,3 +45,11 @@ h1, h2 {
   padding-left: 6px;
   padding-right: 2px;
 }
+
+.coordinate_list {
+  float: right;
+}
+
+.coordinate_list h3 {
+  margin-top: 0;
+}

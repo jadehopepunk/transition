@@ -13,9 +13,16 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
   
-  def logged_in?
-    true
-  end
-  helper_method :logged_in?
+  protected
+  
+    def logged_in?
+      true
+    end
+    helper_method :logged_in?
+  
+    def title
+      "Transition Maps"
+    end
+    helper_method :title
   
 end

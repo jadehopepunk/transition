@@ -3,8 +3,9 @@ class CreatePins < ActiveRecord::Migration
     create_table :pins do |t|
       t.boolean :grow_food, :make_food, :sell_food, :gardening_instruction, :gardening_products
       t.text :description
-      t.string :group_type, :name, :street_address, :suburb, :city, :email_address
+      t.string :group_type, :name, :street_address, :suburb, :city, :email_address, :country
       t.integer :map_region_id
+      t.float :lat, :long
       
       t.timestamps
     end

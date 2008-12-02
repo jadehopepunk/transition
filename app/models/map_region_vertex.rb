@@ -1,6 +1,6 @@
 class MapRegionVertex < ActiveRecord::Base
   belongs_to :map_region
-  acts_as_list
+  acts_as_list :scope => :map_region_id
   composed_of :latlong, :mapping => [%w(long long), %w(lat lat)], :class_name => Math::Latlong.name {|vertex| Math::Latlong.new(vertex.long, vertex.lat) }
   
   validates_presence_of :map_region, :lat, :long

@@ -24,11 +24,11 @@ ActionController::Routing::Routes.draw do |map|
   #     products.resources :sales, :collection => { :recent => :get }
   #   end
 
-  map.resources :map_regions
+  map.resources :map_regions, :pins
 
   map.namespace :admin do |admin|
     admin.resources :map_regions do |map_regions|
-      map_regions.resources :map_region_vertices
+      map_regions.resources :map_region_vertices, :collection => {:delete_all => :delete}
     end
   end
 

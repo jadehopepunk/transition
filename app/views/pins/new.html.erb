@@ -1,7 +1,44 @@
+<% content_for :head do %>
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= AppConfig.google_maps_key %>" type="text/javascript"></script>
+  <script type="text/javascript">
+    //<![CDATA[
+
+		var map = new PointSelectionMap("map");
+
+		function checkMapSectionDisplay() {
+			if ($('pin_street_address').value != '') {
+				$('map_section').show();
+				if (!map.loaded) {
+					map.load();
+					
+					var start_address = {
+						'street_address': $('pin_street_address').value,
+						'suburb': $('pin_suburb').value,
+						'city': $('pin_city').value,
+						'country': $('pin_country').value,
+					}
+					map.updateAddress(start_address, 'pin_lat', 'pin_long');					
+				}
+			}
+		}
+
+    function load() {
+			checkMapSectionDisplay();
+    }
+
+    //]]>
+  </script>			
+<% end %>
+<% content_for :body_load, "load()" %>
+<% content_for :body_unload, "GUnload()" %>
+
 <h2>Put something on the map</h2>
 
-<% form_for :pin, :url => pins_path, :method => :post, :builder => LabelledBuilder do |f| %>
+<% form_for :pin, :url => pins_path, :method => :post, :builder => LabelledBuilder, :html => {:onsubmit => "map.writeLatLong('pin_lat', 'pin_long'); return true;"} do |f| %>
 	<%= f.hidden_field :map_region_id %>
+	<%= f.hidden_field :lat %>
+	<%= f.hidden_field :long %>	
+	<%= f.hidden_field :country %>	
 
 	<p>We're excited about finding out about the resources available in our local community.</p>
 
@@ -33,18 +70,24 @@
 	
 	<%= f.text_field :email_address, :hint => "Your email address is optional, but lets you come back and edit these details later" %>
 
-	<%= f.text_field :street_address %>
+	<%= f.text_field :street_address, :onblur => "map.updateStreetAddress(this.value);", :onchange => "checkMapSectionDisplay();" %>
 	
-	<%= f.text_field :suburb %>
+	<%= f.text_field :suburb, :onblur => "map.updateSuburb(this.value);", :onchange => "checkMapSectionDisplay();" %>
 
-	<%= f.text_field :city %>
+	<%= f.text_field :city, :onblur => "map.updateCity(this.value);", :onchange => "checkMapSectionDisplay();" %>
+
+	<div id="map_section" style="display: none">
+		<h3>Putting you on our map</h3>
+
+		<p>We've put a marker where we think you are (once you've filled in the address above). If it's not
+		correct, you can drag the marker around.</p>
+
+		<%= error_message_on :pin, :lat, "<strong>Sorry</strong>, Latitude " %>
+		<%= error_message_on :pin, :long, "<strong>Sorry</strong>, Longitude " %>
+
+		<div id="map" class="google_map" style="width: 400px; height: 500px; margin-top: 1em"></div>
+	</div>
 	
 	<%= form_footer(:pin, :cancel_link => map_region_path(@map_region)) %>
 <% end %>
-
-
-
-
-
-
 

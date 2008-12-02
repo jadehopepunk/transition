@@ -1,47 +1,8 @@
-input.text_field
-{
-  width: 300px;
-}
-
-form.search_form input.text_field
-{
-  width: 400px;
-}
-
-div.box input.text_field {
-  width: 280px;
-  display: block;
-}
-
-div.footer
-{
+div.footer {
   margin-top: 2em;
 }
 
-div.search_box {
-  background-color: #600;
-  border: 2px solid #000;
-  color: #FFF;
-  padding: 5px;
-}
-
-div.search_box .text_field {
-  border-color: #600;
-}
-
-div.search_box h2 {
-  margin-bottom: 0.3em;
-  color: #FFF;
-  font-size: 100%;
-}
-
-div.search_box div.footer {
-  margin-top: 0.3em;
-  text-align: right;
-}
-
-.sub_label
-{
+.sub_label {
   color: #333333;
 }
 
@@ -50,58 +11,41 @@ label .hint {
   font-weight: normal;
 }
 
-span.step_number, span.option_number {
-  background-color: #000;
-  color: #FFF;
-  line-height: 140%;
-  padding: 5px;
-  font-weight: normal;
-}
-
-.form_step {
-  border: 2px solid #CBB5A5;
-  padding: 10px;
+div.form_row {
   margin-top: 1em;  
 }
 
-.form_step h2 {
-  font-size: 120%;
-  letter-spacing: 0;
-  word-spacing: 0;
-  margin-bottom: 1em;
-}
-
-.active_form_step {
-  background-color: #FFF;
-}
-
-div.form_row
-{
-  margin-top: 1em;  
-}
-
-form.single_column
-{
-  width: 650px;
-}
-
-form.single_column label
-{
+label {
   display: block;
   margin-top: 1em;
 }
 
-form.single_column input.text_field
-{
+input.text_field {
   width: 500px;
 }
 
-form.single_column label.checkbox
-{
+textarea {
+  width: 500px;  
+  height: 150px;
+}
+
+label.check_box {
   display: inline;
 }
 
-form.single_column select {
+input.check_box {
+  display: inline;
+}
+
+div.checkbox_collection {
+  margin-top: 1em;
+}
+
+div.checkbox_collection .form_row {
+  margin: 0;
+}
+
+select {
   min-width: 150px;
 }
 
@@ -129,3 +73,39 @@ form div.form_pop_in {
   padding: 10px;
   margin: 1em 0;
 }
+
+div.errorExplanation
+{
+  border: 2px solid #000;
+  background-color: #FE8;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  padding: 4px 5px;
+  margin: -2px -2px 0 -2px;
+}
+
+#errorExplanation p {
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-weight: bold;
+  color: #C00;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: #C00;
+  color: #000;
+  display: table;
+}
+
+div.formError {
+  color: #C00;
+}
+

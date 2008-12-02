@@ -30,3 +30,191 @@
   [4;35;1mSQL (0.000118)[0m   [0mROLLBACK[0m
   [4;36;1mSQL (0.000160)[0m   [0;1mBEGIN[0m
   [4;35;1mSQL (0.000089)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000234)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000254)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.021904)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000585)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000327)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-11-29 07:30:13', '2008-11-29 07:30:13')[0m
+  [4;35;1mSQL (0.000639)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000168)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000284)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-11-29 07:30:13', '2008-11-29 07:30:13')[0m
+  [4;36;1mMapRegionVertex Columns (0.000000)[0m   [0;1mMysql::Error: Table 'transition_test.map_region_vertices' doesn't exist: SHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mSQL (0.000643)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000175)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000102)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000149)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000187)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000076)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000233)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000081)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000248)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000079)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.002480)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000456)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000347)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-11-29 07:31:23', '2008-11-29 07:31:23')[0m
+  [4;35;1mSQL (0.000595)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000278)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-11-29 07:31:23', '2008-11-29 07:31:23')[0m
+  [4;36;1mMapRegionVertex Columns (0.069296)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000717)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Load (0.000492)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (map_region_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mMapRegionVertex Create (0.015444)[0m   [0mINSERT INTO `map_region_vertices` (`updated_at`, `map_region_id`, `position`, `lat`, `long`, `created_at`) VALUES('2008-11-29 07:31:23', 2, 1, 1.0, 1.0, '2008-11-29 07:31:23')[0m
+  [4;36;1mSQL (0.000874)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000163)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000102)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000147)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000125)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000151)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000228)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000217)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.013941)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.012887)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000352)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-01 07:00:54', '2008-12-01 07:00:54')[0m
+  [4;35;1mSQL (0.000627)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000165)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000265)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-01 07:00:54', '2008-12-01 07:00:54')[0m
+  [4;36;1mMapRegionVertex Columns (0.018493)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000519)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Load (0.000505)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (map_region_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mMapRegionVertex Create (0.015368)[0m   [0mINSERT INTO `map_region_vertices` (`updated_at`, `map_region_id`, `position`, `lat`, `long`, `created_at`) VALUES('2008-12-01 07:00:54', 2, 1, 1.0, 1.0, '2008-12-01 07:00:54')[0m
+  [4;36;1mSQL (0.000797)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000167)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000136)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000089)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000132)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000128)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000124)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000153)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000228)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000271)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.040119)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.001018)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000349)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 06:52:19', '2008-12-02 06:52:19')[0m
+  [4;35;1mSQL (0.008795)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000295)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 06:52:19', '2008-12-02 06:52:19')[0m
+  [4;36;1mMapRegionVertex Columns (0.033030)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001329)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Load (0.000678)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (map_region_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mMapRegionVertex Create (0.010258)[0m   [0mINSERT INTO `map_region_vertices` (`updated_at`, `map_region_id`, `position`, `lat`, `long`, `created_at`) VALUES('2008-12-02 06:52:19', 2, 1, 1.0, 1.0, '2008-12-02 06:52:19')[0m
+  [4;36;1mSQL (0.000698)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000171)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000151)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000149)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000159)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000153)[0m   [0mBEGIN[0m
+  [4;36;1mPin Columns (0.000000)[0m   [0;1mMysql::Error: Table 'transition_test.pins' doesn't exist: SHOW FIELDS FROM `pins`[0m
+  [4;35;1mSQL (0.000149)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000233)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000076)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.002502)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000450)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000356)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 06:55:38', '2008-12-02 06:55:38')[0m
+  [4;35;1mSQL (0.000535)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000156)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000245)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 06:55:38', '2008-12-02 06:55:38')[0m
+  [4;36;1mMapRegionVertex Columns (0.001935)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000864)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Load (0.000432)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (map_region_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mMapRegionVertex Create (0.000237)[0m   [0mINSERT INTO `map_region_vertices` (`updated_at`, `map_region_id`, `position`, `lat`, `long`, `created_at`) VALUES('2008-12-02 06:55:38', 2, 1, 1.0, 1.0, '2008-12-02 06:55:38')[0m
+  [4;36;1mSQL (0.000566)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000144)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000132)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000130)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000157)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000236)[0m   [0mBEGIN[0m
+  [4;36;1mPin Columns (0.026677)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000741)[0m   [0mSHOW KEYS FROM `pins`[0m
+  [4;36;1mSQL (0.000149)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000261)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000075)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.056410)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.013679)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000380)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 07:00:37', '2008-12-02 07:00:37')[0m
+  [4;35;1mSQL (0.017002)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000185)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000309)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 07:00:38', '2008-12-02 07:00:38')[0m
+  [4;36;1mMapRegionVertex Columns (0.007907)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.030713)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Load (0.000670)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (map_region_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mMapRegionVertex Create (0.000292)[0m   [0mINSERT INTO `map_region_vertices` (`updated_at`, `map_region_id`, `position`, `lat`, `long`, `created_at`) VALUES('2008-12-02 07:00:38', 2, 1, 1.0, 1.0, '2008-12-02 07:00:38')[0m
+  [4;36;1mSQL (0.000568)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000191)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000176)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000190)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000133)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000141)[0m   [0mBEGIN[0m
+  [4;36;1mPin Columns (0.049797)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.026573)[0m   [0mSHOW KEYS FROM `pins`[0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000229)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000075)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.002310)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000439)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000384)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 07:01:38', '2008-12-02 07:01:38')[0m
+  [4;35;1mSQL (0.000539)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000244)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 07:01:38', '2008-12-02 07:01:38')[0m
+  [4;36;1mMapRegionVertex Columns (0.001901)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000972)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Load (0.000437)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (map_region_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mMapRegionVertex Create (0.000266)[0m   [0mINSERT INTO `map_region_vertices` (`updated_at`, `map_region_id`, `position`, `lat`, `long`, `created_at`) VALUES('2008-12-02 07:01:38', 2, 1, 1.0, 1.0, '2008-12-02 07:01:38')[0m
+  [4;36;1mSQL (0.000586)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000144)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000135)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000128)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000174)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000484)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000227)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000073)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Columns (0.002283)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000430)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Create (0.000320)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 07:04:58', '2008-12-02 07:04:58')[0m
+  [4;35;1mSQL (0.000586)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000166)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Create (0.000292)[0m   [0mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 07:04:58', '2008-12-02 07:04:58')[0m
+  [4;36;1mMapRegionVertex Columns (0.002062)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000672)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Load (0.000537)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (map_region_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mMapRegionVertex Create (0.000298)[0m   [0mINSERT INTO `map_region_vertices` (`updated_at`, `map_region_id`, `position`, `lat`, `long`, `created_at`) VALUES('2008-12-02 07:04:58', 2, 1, 1.0, 1.0, '2008-12-02 07:04:58')[0m
+  [4;36;1mSQL (0.000608)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000172)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000135)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000228)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000151)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000146)[0m   [0mBEGIN[0m
+  [4;36;1mMapRegion Create (0.000238)[0m   [0;1mINSERT INTO `map_regions` (`name`, `updated_at`, `created_at`) VALUES('Waitakere', '2008-12-02 07:04:58', '2008-12-02 07:04:58')[0m
+  [4;35;1mPin Columns (0.003151)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000435)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+  [4;35;1mPin Create (0.000436)[0m   [0mINSERT INTO `pins` (`gardening_products`, `name`, `city`, `updated_at`, `grow_food`, `sell_food`, `group_type`, `suburb`, `gardening_instruction`, `description`, `street_address`, `map_region_id`, `make_food`, `lat`, `email_address`, `long`, `created_at`) VALUES(NULL, 'Craig\'s Vegie Garden', NULL, '2008-12-02 07:04:58', 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, '2008-12-02 07:04:58')[0m
+  [4;36;1mSQL (0.000575)[0m   [0;1mROLLBACK[0m

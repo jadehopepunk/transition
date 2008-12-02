@@ -3,21 +3,12 @@
   <script type="text/javascript">
     //<![CDATA[
 
+		var region_map = new RegionMap("map", <%= @map_region.to_json %>, false);
+
     function load() {
-      if (GBrowserIsCompatible()) {
-        var map = new GMap2(document.getElementById("map"));
-        map.setCenter(new GLatLng(-36.85, 174.64), 11);
-				map.addControl(new GLargeMapControl());
-				
-				<% unless @map_region.vertices.empty? %>
-				  var polygon = new GPolygon([
-						<% for vertex in @map_region.vertices + [@map_region.vertices.first] %>
-							new GLatLng(<%= vertex.lat %>, <%= vertex.long %>),
-						<% end %>
-				  ], "#33CC33", 5, 1, "#33CC33", 0.3);
-				  map.addOverlay(polygon);
-				<% end %>
-      }
+			region_map.load();
+			region_map.setBoundary(<%= @map_region.to_json(:include => :vertices) %>);
+			region_map.displayPins(<%= @map_region.pins.to_json %>);
     }
 
     //]]>
@@ -26,6 +17,6 @@
 <% content_for :body_load, "load()" %>
 <% content_for :body_unload, "GUnload()" %>
 
-<h1>Map Region</h1>
+<div id="map" class="google_map" style="width: 400px; height: 500px">google map goes here</div>
 
-<div id="map" class="google_map" style="width: 500px; height: 300px">google map goes here</div>
+<%= link_to "New Pin", new_pin_path(:map_region_id => @map_region.id) %>

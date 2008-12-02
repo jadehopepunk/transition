@@ -4,7 +4,12 @@ class Pin < ActiveRecord::Base
   belongs_to :map_region
   
   validate :has_a_resource_type
-  validates_presence_of :name, :map_region
+  validates_presence_of :name, :map_region, :street_address, :suburb, :city, :country
+  validates_presence_of :lat, :long
+  
+  def address
+    {:street_address => street_address, :suburb => suburb, :city => city, :country => country}
+  end
   
   protected
   

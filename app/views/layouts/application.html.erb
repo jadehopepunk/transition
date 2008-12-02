@@ -3,9 +3,13 @@
 	<head>
 		<title>Transition Towns</title>
 		<%= stylesheet_link_tag 'application', 'forms', :cache => true %>	
+		<%= render :partial => 'layouts/head' %>
 		<%= yield :head %>
 	</head>
 	<body onload="<%= yield :body_load %>" onunload="<%= yield :body_unload %>">
+		<div class="header">
+			<h1><%=h title %></h1>
+		</div>
 		<div class="body_container">
 			<div class="page_content">
 				<%= yield %>

@@ -11,7 +11,7 @@ class MapRegionsController < ApplicationController
     end
 
     def title
-      "Resources for Resiliance - #{@map_region.name}"
+      "Local food in #{@map_region.name}"
     end
   
 end

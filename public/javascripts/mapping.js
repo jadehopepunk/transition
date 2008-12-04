@@ -3,7 +3,8 @@ var RegionMap = Class.create({
     this.container_id  = container_id;
     this.map = null;
     this.boundary = null;
-    this.markers = [];
+    this.boundary_markers = [];
+    this.pin_markers = [];
     this.map_region = map_region;
     this.boundary_editing = boundary_editing;
   },
@@ -11,8 +12,8 @@ var RegionMap = Class.create({
   load: function() {
     if (GBrowserIsCompatible()) {
       this.loaded = true;
-      this.map = new GMap2(document.getElementById(this.container_id), {mapTypes: [G_SATELLITE_MAP]});
-      this.map.setCenter(new GLatLng(-36.92, 174.57), 11);
+      this.map = new GMap2(document.getElementById(this.container_id), {mapTypes: [G_NORMAL_MAP]});
+      this.map.setCenter(new GLatLng(-36.87, 174.58), 13);
 			this.map.addControl(new GLargeMapControl());
 			if (this.boundary_editing) {
   			this.enableBoundaryEditing();				  
@@ -20,8 +21,18 @@ var RegionMap = Class.create({
     }
   },
   
-  displayPins: function() {
-    
+  displayPins: function(pins) {
+    pins.each(function(pin) {
+      point = new GLatLng(pin.lat, pin.long)
+      var marker = new GMarker(point, {title: pin.description});
+      this.map.addOverlay(marker);
+      this.pin_markers.push(marker);
+      marker.bindInfoWindowHtml(this.infoWindowHtml(pin));      
+    }, this);
+  },
+  
+  infoWindowHtml: function(pin) {
+    return '<div class="info_window"><h1>' + pin.name + '</h1><p class="description">' + pin.description + '</p></div>'
   },
   
   setBoundary: function(map_region) {
@@ -53,7 +64,7 @@ var RegionMap = Class.create({
       
       var marker = new GMarker(point, {title: vertex.position, icon:icon});
       this.map.addOverlay(marker);
-      this.markers.push(marker);
+      this.boundary_markers.push(marker);
     }, this);
   },
   
@@ -75,10 +86,10 @@ var RegionMap = Class.create({
       this.map.removeOverlay(this.boundary);
       this.boundary = null;
     }
-    this.markers.each(function(marker){
+    this.boundary_markers.each(function(marker){
       this.map.removeOverlay(marker);
     }, this);
-    this.markers = [];
+    this.boundary_markers = [];
   },
   
   enableClickHandler: function(url) {

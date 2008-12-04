@@ -42372,3 +42372,1588 @@ ActionController::RoutingError (No route matches "/images/ajax-loader.gif" with 
     script/server:3
 
 Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:07:08) [GET]
+  Session ID: c297098495c9ab99bd035b7bbc5b31cb
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mSQL (0.050266)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mMapRegion Columns (0.538351)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.154889)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.066431)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.868349)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.569828)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.146016)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.517835)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00151)
+Completed in 4.21549 (0 reqs/sec) | Rendering: 1.22428 (29%) | DB: 2.91196 (69%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:16:43) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002112)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000449)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000327)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.038901)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002096)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001145)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000570)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+
+
+ActionView::TemplateError (undefined local variable or method `logo' for #<ActionView::Base:0x23fd41c>) on line #11 of layouts/application.html.erb:
+8: 	</head>
+9: 	<body onload="<%= yield :body_load %>" onunload="<%= yield :body_unload %>">
+10: 		<div class="header">
+11: 			<%= image_tag logo %>
+12: 			<h1><%=h title %></h1>
+13: 		</div>
+14: 		<div class="body_container">
+
+    app/views/layouts/application.html.erb:11:in `_run_erb_47app47views47layouts47application46html46erb'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `execute'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:35:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:22:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `render_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/layout.rb:257:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1161:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:16:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002108)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000666)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000311)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.003382)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001850)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001221)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000454)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.10932 (9 reqs/sec) | Rendering: 0.08357 (76%) | DB: 0.05270 (48%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:19:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002161)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000458)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000321)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002471)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001691)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001245)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000481)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.19802 (5 reqs/sec) | Rendering: 0.17353 (87%) | DB: 0.00883 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:19:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.001707)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000726)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000232)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001767)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001562)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.000859)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000461)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.10205 (9 reqs/sec) | Rendering: 0.07921 (77%) | DB: 0.00731 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:19:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002007)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000435)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000351)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.004154)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001913)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001198)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000488)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.20660 (4 reqs/sec) | Rendering: 0.09286 (44%) | DB: 0.01055 (5%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:20:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.001872)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000416)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000235)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001748)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001449)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001291)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000457)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00041)
+Completed in 0.10056 (9 reqs/sec) | Rendering: 0.07869 (78%) | DB: 0.00747 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:20:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002192)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000575)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000310)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.004358)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001527)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000884)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000475)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00040)
+Completed in 0.10896 (9 reqs/sec) | Rendering: 0.08187 (75%) | DB: 0.01032 (9%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:21:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002215)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000492)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000396)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002317)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001858)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001039)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000479)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.11404 (8 reqs/sec) | Rendering: 0.08944 (78%) | DB: 0.00880 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:22:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002196)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000531)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000308)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002747)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001957)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001142)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000446)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.11481 (8 reqs/sec) | Rendering: 0.08905 (77%) | DB: 0.00933 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:23:25) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002209)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000457)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000306)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002447)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001709)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001085)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000472)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.20249 (4 reqs/sec) | Rendering: 0.17791 (87%) | DB: 0.00868 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:24:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002136)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000563)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000309)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002541)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001926)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001002)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000485)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.11794 (8 reqs/sec) | Rendering: 0.09213 (78%) | DB: 0.00896 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:24:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002077)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000503)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000296)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002533)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001875)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001159)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000474)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00042)
+Completed in 0.20517 (4 reqs/sec) | Rendering: 0.18024 (87%) | DB: 0.00892 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:24:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.001840)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000384)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000232)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.001720)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001777)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000985)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000552)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.10247 (9 reqs/sec) | Rendering: 0.07980 (77%) | DB: 0.00749 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:24:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.003166)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000987)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000235)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001895)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001931)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.000807)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000523)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00042)
+Completed in 0.19774 (5 reqs/sec) | Rendering: 0.17221 (87%) | DB: 0.00954 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:24:37) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002349)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000487)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000320)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002772)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002273)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001171)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000459)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00044)
+Completed in 0.11135 (8 reqs/sec) | Rendering: 0.08529 (76%) | DB: 0.00983 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:24:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002091)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000533)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000555)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002431)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.002524)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001208)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000466)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.21263 (4 reqs/sec) | Rendering: 0.18625 (87%) | DB: 0.00981 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:24:55) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002152)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000804)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000295)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002357)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002315)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001197)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000461)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00041)
+Completed in 0.11119 (8 reqs/sec) | Rendering: 0.08515 (76%) | DB: 0.00958 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:25:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002188)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000454)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000307)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002487)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001990)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001181)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000475)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00040)
+Completed in 0.20309 (4 reqs/sec) | Rendering: 0.17658 (86%) | DB: 0.00908 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:25:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002126)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000443)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000310)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.003106)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001889)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001103)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000466)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00040)
+Completed in 0.10852 (9 reqs/sec) | Rendering: 0.08332 (76%) | DB: 0.00944 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:25:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002148)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000444)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000291)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001794)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.002228)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001163)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000456)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.20562 (4 reqs/sec) | Rendering: 0.18149 (88%) | DB: 0.00852 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:25:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002221)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000643)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000315)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002290)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002285)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001160)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000481)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.10981 (9 reqs/sec) | Rendering: 0.08423 (76%) | DB: 0.00939 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:25:45) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002190)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000533)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000299)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002747)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.002454)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001768)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000472)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.20169 (4 reqs/sec) | Rendering: 0.08626 (42%) | DB: 0.01046 (5%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:26:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002359)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000624)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000289)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002792)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002037)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001159)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000452)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.12116 (8 reqs/sec) | Rendering: 0.09590 (79%) | DB: 0.00971 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:26:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002225)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000564)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000371)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002413)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.002019)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001155)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000503)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.11912 (8 reqs/sec) | Rendering: 0.09263 (77%) | DB: 0.00925 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:28:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002199)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000467)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000312)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002682)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002419)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001236)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000491)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.12041 (8 reqs/sec) | Rendering: 0.09492 (78%) | DB: 0.00981 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:28:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002209)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000458)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000294)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.003744)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001888)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001143)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000451)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00036)
+Completed in 0.11043 (9 reqs/sec) | Rendering: 0.08415 (76%) | DB: 0.01019 (9%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:28:47) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002118)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000521)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000314)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.005221)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002354)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001149)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000477)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.20315 (4 reqs/sec) | Rendering: 0.17506 (86%) | DB: 0.01215 (5%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:29:02) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002140)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000445)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000376)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.003944)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001938)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001146)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000493)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.11184 (8 reqs/sec) | Rendering: 0.08539 (76%) | DB: 0.01048 (9%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:29:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.001908)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000731)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000223)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.001776)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002137)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000765)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000457)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.19347 (5 reqs/sec) | Rendering: 0.17040 (88%) | DB: 0.00800 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:29:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.001816)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000728)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000244)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001746)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001842)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.000801)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000475)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.10399 (9 reqs/sec) | Rendering: 0.08166 (78%) | DB: 0.00765 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:29:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.001994)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000801)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000279)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.001825)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001738)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001276)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000457)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00040)
+Completed in 0.19308 (5 reqs/sec) | Rendering: 0.17010 (88%) | DB: 0.00837 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:30:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002236)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000726)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000229)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001702)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001613)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001261)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000497)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.10087 (9 reqs/sec) | Rendering: 0.07818 (77%) | DB: 0.00826 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:30:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002097)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000417)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000305)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002646)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001894)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001055)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000664)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.20292 (4 reqs/sec) | Rendering: 0.17754 (87%) | DB: 0.00908 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:32:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002164)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000555)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000409)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001868)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001729)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001279)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000453)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00036)
+Completed in 0.10654 (9 reqs/sec) | Rendering: 0.08238 (77%) | DB: 0.00846 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:33:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002488)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000460)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000311)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.001913)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002356)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001152)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000467)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.20910 (4 reqs/sec) | Rendering: 0.09227 (44%) | DB: 0.00915 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:33:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002095)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000563)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000432)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002258)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001883)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001299)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000422)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.11716 (8 reqs/sec) | Rendering: 0.09183 (78%) | DB: 0.00895 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:35:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002100)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000608)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000342)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.001871)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002213)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001179)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000458)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00040)
+Completed in 0.11242 (8 reqs/sec) | Rendering: 0.08701 (77%) | DB: 0.00877 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:42:18) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002091)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000457)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000314)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002438)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001867)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001201)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000481)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.19818 (5 reqs/sec) | Rendering: 0.17286 (87%) | DB: 0.00885 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:42:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.001960)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000814)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000226)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.001719)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001784)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001252)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000461)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.10269 (9 reqs/sec) | Rendering: 0.07851 (76%) | DB: 0.00822 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:42:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.001961)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000725)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000232)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001816)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001796)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001281)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000506)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.19500 (5 reqs/sec) | Rendering: 0.17203 (88%) | DB: 0.00832 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:42:59) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002091)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000428)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000307)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.003135)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001848)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001309)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000476)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.10729 (9 reqs/sec) | Rendering: 0.08150 (75%) | DB: 0.00959 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:43:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002205)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000523)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000280)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.003049)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001830)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001254)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000443)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00038)
+Completed in 0.20083 (4 reqs/sec) | Rendering: 0.17514 (87%) | DB: 0.00958 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:43:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002121)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000626)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000399)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002379)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001869)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001153)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000503)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.11293 (8 reqs/sec) | Rendering: 0.08812 (78%) | DB: 0.00905 (8%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:43:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002218)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000449)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000315)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002870)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.002401)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001229)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000529)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00037)
+Completed in 0.20602 (4 reqs/sec) | Rendering: 0.17964 (87%) | DB: 0.01001 (4%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:45:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.001891)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000948)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000287)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.007414)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002668)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000817)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000551)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+Rendered layouts/_head (0.00042)
+Completed in 0.11945 (8 reqs/sec) | Rendering: 0.08747 (73%) | DB: 0.01458 (12%) | 200 OK [http://localhost/]
+
+
+Processing PinsController#new (for 127.0.0.1 at 2008-12-04 21:45:54) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"new", "controller"=>"pins", "map_region_id"=>"1"}
+  [4;35;1mMapRegion Columns (0.002226)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000605)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000378)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+  [4;36;1mPin Columns (0.002766)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.025569)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendering template within layouts/application
+Rendering pins/new
+Rendered layouts/_head (0.00031)
+Completed in 0.23662 (4 reqs/sec) | Rendering: 0.17265 (72%) | DB: 0.03154 (13%) | 200 OK [http://localhost/pins/new?map_region_id=1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-12-04 21:45:55) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/ajax-loader.gif" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/route_set.rb:385:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing PinsController#create (for 127.0.0.1 at 2008-12-04 21:47:26) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"a97802cba0129f5a5f46bb34c4c87826051cfa38", "action"=>"create", "controller"=>"pins", "pin"=>{"gardening_products"=>"0", "name"=>"Buffie, Tracey and Craig", "city"=>"Waitakere", "grow_food"=>"1", "country"=>"New Zealand", "sell_food"=>"0", "group_type"=>"Household", "suburb"=>"Swanson", "gardening_instruction"=>"0", "description"=>"We have a small hobby farm which grows it's own vegies.", "street_address"=>"17 Kay Rd", "map_region_id"=>"1", "make_food"=>"0", "lat"=>"-36.863033", "long"=>"174.56671", "email_address"=>"craig@craigambrose.com"}}
+  [4;36;1mPin Columns (0.004317)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.001442)[0m   [0mSHOW KEYS FROM `pins`[0m
+  [4;36;1mSQL (0.000155)[0m   [0;1mBEGIN[0m
+  [4;35;1mMapRegion Columns (0.001719)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000683)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000229)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+  [4;36;1mPin Create (0.274225)[0m   [0;1mINSERT INTO `pins` (`gardening_products`, `name`, `city`, `updated_at`, `grow_food`, `sell_food`, `group_type`, `country`, `suburb`, `gardening_instruction`, `description`, `street_address`, `map_region_id`, `make_food`, `lat`, `email_address`, `long`, `created_at`) VALUES(0, 'Buffie, Tracey and Craig', 'Waitakere', '2008-12-04 08:47:26', 1, 0, 'Household', 'New Zealand', 'Swanson', 0, 'We have a small hobby farm which grows it\'s own vegies.', '17 Kay Rd', 1, 0, -36.863033, 'craig@craigambrose.com', 174.56671, '2008-12-04 08:47:26')[0m
+  [4;35;1mSQL (0.032771)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/pins/1
+Completed in 0.34484 (2 reqs/sec) | DB: 0.31554 (91%) | 302 Found [http://localhost/pins]
+
+
+Processing PinsController#show (for 127.0.0.1 at 2008-12-04 21:47:27) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"pins"}
+
+
+ActionController::UnknownAction (No action responded to show):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing PinsController#index (for 127.0.0.1 at 2008-12-04 21:47:32) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"index", "controller"=>"pins"}
+
+
+ActionController::UnknownAction (No action responded to index):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:47:37) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002170)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000492)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000320)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.003079)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001790)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001290)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000538)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.003034)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000566)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00053)
+Completed in 0.20812 (4 reqs/sec) | Rendering: 0.17856 (85%) | DB: 0.01328 (6%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:56:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002058)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000617)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000397)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002316)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001864)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001057)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000551)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.003019)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000476)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00058)
+Completed in 0.12936 (7 reqs/sec) | Rendering: 0.10071 (77%) | DB: 0.01236 (9%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:57:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002280)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000496)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000347)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002317)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002082)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001647)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000535)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.003035)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000490)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00054)
+Completed in 0.21429 (4 reqs/sec) | Rendering: 0.09484 (44%) | DB: 0.01323 (6%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:58:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002003)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.001058)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000235)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001783)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001933)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.000918)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000462)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.002985)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000536)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00053)
+Completed in 0.11260 (8 reqs/sec) | Rendering: 0.08648 (76%) | DB: 0.01191 (10%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:58:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002031)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000636)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000292)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.001966)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001896)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001277)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000486)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.006288)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000587)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00037)
+Completed in 0.12787 (7 reqs/sec) | Rendering: 0.09690 (75%) | DB: 0.01546 (12%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:58:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002185)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000336)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000225)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001702)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001807)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001255)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000534)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.003008)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000591)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00054)
+Completed in 0.20328 (4 reqs/sec) | Rendering: 0.17664 (86%) | DB: 0.01164 (5%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:59:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002143)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000626)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000380)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002409)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.002388)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001690)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000530)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.003009)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000469)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00054)
+Completed in 0.12496 (8 reqs/sec) | Rendering: 0.09377 (75%) | DB: 0.01364 (10%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:59:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002099)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000544)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000368)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002391)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001833)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001030)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000520)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.003017)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000466)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00086)
+Completed in 0.20974 (4 reqs/sec) | Rendering: 0.18160 (86%) | DB: 0.01227 (5%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:59:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.001970)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000709)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000222)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.001700)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001890)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.000903)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000509)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.003021)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000447)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00059)
+Completed in 0.11119 (8 reqs/sec) | Rendering: 0.08541 (76%) | DB: 0.01137 (10%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:59:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.001980)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000614)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000337)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.003378)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001525)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.003641)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000528)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.003210)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000506)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00055)
+Completed in 0.21792 (4 reqs/sec) | Rendering: 0.18561 (85%) | DB: 0.01572 (7%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 21:59:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002282)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000440)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.026237)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002311)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001903)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001157)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000750)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.002983)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000875)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00050)
+Completed in 0.14839 (6 reqs/sec) | Rendering: 0.09282 (62%) | DB: 0.03894 (26%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:00:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002244)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000551)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000375)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002402)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.002420)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001212)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000526)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.002951)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000469)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00056)
+Completed in 0.21876 (4 reqs/sec) | Rendering: 0.09788 (44%) | DB: 0.01315 (6%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:00:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.226074)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.001110)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000290)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002330)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.003791)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001307)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000518)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.003291)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000518)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00062)
+Completed in 0.34377 (2 reqs/sec) | Rendering: 0.08882 (25%) | DB: 0.23923 (69%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:01:35) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002003)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000704)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000235)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.001739)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.002179)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001653)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000521)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.002953)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000467)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00052)
+Completed in 0.11486 (8 reqs/sec) | Rendering: 0.08671 (75%) | DB: 0.01245 (10%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:02:01) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002071)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000498)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000308)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002530)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001879)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001352)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000438)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.002961)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000477)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00060)
+Completed in 0.11669 (8 reqs/sec) | Rendering: 0.08761 (75%) | DB: 0.01251 (10%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:08:25) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002142)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000454)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000312)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002341)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001915)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001080)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000547)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.003013)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000512)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00052)
+Completed in 0.12290 (8 reqs/sec) | Rendering: 0.09296 (75%) | DB: 0.01232 (10%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:10:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002116)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000452)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000323)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002348)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001878)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001219)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000535)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.002953)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000514)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00053)
+Completed in 0.21499 (4 reqs/sec) | Rendering: 0.18630 (86%) | DB: 0.01234 (5%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:10:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002583)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000397)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000239)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.002266)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.002332)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001725)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000528)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.002492)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000841)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00038)
+Completed in 0.11659 (8 reqs/sec) | Rendering: 0.08826 (75%) | DB: 0.01340 (11%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:11:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002098)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000455)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000310)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002501)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001807)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001093)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000525)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.003017)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000497)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00052)
+Completed in 0.20935 (4 reqs/sec) | Rendering: 0.18099 (86%) | DB: 0.01230 (5%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:12:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002166)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000565)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000313)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.003537)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001984)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001162)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000515)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.002999)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000456)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00066)
+Completed in 0.11810 (8 reqs/sec) | Rendering: 0.08883 (75%) | DB: 0.01370 (11%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:13:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002123)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000631)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000355)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002365)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001944)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001152)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000532)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.003260)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000514)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00075)
+Completed in 0.22103 (4 reqs/sec) | Rendering: 0.09963 (45%) | DB: 0.01288 (5%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:14:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;35;1mMapRegion Columns (0.002111)[0m   [0mSHOW FIELDS FROM `map_regions`[0m
+  [4;36;1mMapRegion Indexes (0.000549)[0m   [0;1mSHOW KEYS FROM `map_regions`[0m
+  [4;35;1mMapRegion Load (0.000449)[0m   [0mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;36;1mMapRegionVertex Load (0.003014)[0m   [0;1mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;35;1mMapRegionVertex Columns (0.001988)[0m   [0mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;36;1mMapRegionVertex Indexes (0.001123)[0m   [0;1mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;35;1mPin Load (0.000526)[0m   [0mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;36;1mPin Columns (0.002465)[0m   [0;1mSHOW FIELDS FROM `pins`[0m
+  [4;35;1mPin Indexes (0.000894)[0m   [0mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00053)
+Completed in 0.12030 (8 reqs/sec) | Rendering: 0.09055 (75%) | DB: 0.01312 (10%) | 200 OK [http://localhost/]
+
+
+Processing MapRegionsController#show (for 127.0.0.1 at 2008-12-04 22:14:43) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWI3ZDRkNGNjMzZmYTFjNTI5MTkwZDZkM2IwMjBh
+YmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--725aa8808c0b799903ff2516bb47264698edd26f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"map_regions"}
+  [4;36;1mMapRegion Columns (0.002056)[0m   [0;1mSHOW FIELDS FROM `map_regions`[0m
+  [4;35;1mMapRegion Indexes (0.000457)[0m   [0mSHOW KEYS FROM `map_regions`[0m
+  [4;36;1mMapRegion Load (0.000310)[0m   [0;1mSELECT * FROM `map_regions` WHERE (`map_regions`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering map_regions/show
+  [4;35;1mMapRegionVertex Load (0.002110)[0m   [0mSELECT * FROM `map_region_vertices` WHERE (`map_region_vertices`.map_region_id = 1) ORDER BY position ASC[0m
+  [4;36;1mMapRegionVertex Columns (0.001800)[0m   [0;1mSHOW FIELDS FROM `map_region_vertices`[0m
+  [4;35;1mMapRegionVertex Indexes (0.001294)[0m   [0mSHOW KEYS FROM `map_region_vertices`[0m
+  [4;36;1mPin Load (0.000510)[0m   [0;1mSELECT * FROM `pins` WHERE (`pins`.map_region_id = 1) [0m
+  [4;35;1mPin Columns (0.003116)[0m   [0mSHOW FIELDS FROM `pins`[0m
+  [4;36;1mPin Indexes (0.000488)[0m   [0;1mSHOW KEYS FROM `pins`[0m
+Rendered layouts/_head (0.00052)
+Completed in 0.11624 (8 reqs/sec) | Rendering: 0.08734 (75%) | DB: 0.01214 (10%) | 200 OK [http://localhost/]

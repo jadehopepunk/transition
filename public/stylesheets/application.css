@@ -1,5 +1,7 @@
 body {
   font-family: sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 p {
@@ -8,11 +10,33 @@ p {
 }
 
 h1 {
-  color: green;
+  color: #006;
+}
+
+.header {
+  height: 130px;
+  background-image: url('../images/logo.jpg');
+  background-repeat: no-repeat;
+  background-position: top left;
+  border: 1px solid white;
+  padding-left: 110px;
+}
+
+.header h1 {
+  margin-bottom: 0;
+}
+
+.header h2 {
+  margin-top: 0;
+  font-size: 110%;
+  border-bottom: 3px solid #33C;
+  display: inline;
+  padding-right: 2em;
+  padding-bottom: 2px;
 }
 
 .body_container {
-  width: 1000px;  
+  width: 1000px;
 }
 
 .page_content {
@@ -119,4 +143,17 @@ div.change_notice .change_time {
 .subtitle {
   font-size: small;
   color: #666;
+}
+
+.info_window {
+  width: 280px;  
+}
+
+.info_window h1 {
+  margin-top: 0;
+  font-size: 100%;
+}
+
+.info_window p.description {
+  margin-bottom: 0;
 }

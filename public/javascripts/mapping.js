@@ -24,7 +24,11 @@ var RegionMap = Class.create({
   displayPins: function(pins) {
     pins.each(function(pin) {
       point = new GLatLng(pin.lat, pin.long)
-      var marker = new GMarker(point, {title: pin.description});
+
+      var icon = new GIcon(G_DEFAULT_ICON);
+      icon.image = "http://www.google.com/intl/en_us/mapfiles/ms/micons/" + pin.colour + "-dot.png";
+
+      var marker = new GMarker(point, {title: pin.name, icon: icon});
       this.map.addOverlay(marker);
       this.pin_markers.push(marker);
       marker.bindInfoWindowHtml(this.infoWindowHtml(pin));      

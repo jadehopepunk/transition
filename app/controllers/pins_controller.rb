@@ -10,7 +10,7 @@ class PinsController < ApplicationController
     if @pin.new_record?
       render :action => :new
     else
-      redirect_to pin_path(@pin)
+      redirect_to '/'
     end
   end
   

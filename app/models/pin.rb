@@ -17,7 +17,11 @@ class Pin < ActiveRecord::Base
   end
   
   def to_json(options = {})
-    super(:methods => :colour)
+    super(:methods => :code)
+  end
+  
+  def code
+    "#{colour}-#{id}"
   end
   
   protected

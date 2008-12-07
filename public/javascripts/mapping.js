@@ -26,7 +26,7 @@ var RegionMap = Class.create({
       point = new GLatLng(pin.lat, pin.long)
 
       var icon = new GIcon(G_DEFAULT_ICON);
-      icon.image = "http://www.google.com/intl/en_us/mapfiles/ms/micons/" + pin.colour + "-dot.png";
+      icon.image = "/pin_images/" + pin.code + '.png';
 
       var marker = new GMarker(point, {title: pin.name, icon: icon});
       this.map.addOverlay(marker);

@@ -45,7 +45,7 @@ class PinImagesController < ApplicationController
         pos_x = (image_x - 7 * length) / 2 + 2;
       end
       
-      FileUtils.mkdir_p final_images_dir
+      FileUtils.mkdir_p(final_images_dir) unless File.exists?(final_images_dir)
       system "convert #{colour_full_filename(colour_name)} -draw \"text #{pos_x},14 '#{number}'\" #{destination_full_filename(colour_name, number)}"
     end
     

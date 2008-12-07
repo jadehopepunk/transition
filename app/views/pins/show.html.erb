@@ -1,0 +1,7 @@
+<h3><%=h @pin.name %></h3>
+
+<p>We: <%= @pin.human_readable_resource_types.map {|phrase| "<strong>#{phrase}</strong>"}.to_sentence %></p>
+
+<%= simple_format(h(@pin.description)) %>
+
+<%= address_to_html(@pin) %>

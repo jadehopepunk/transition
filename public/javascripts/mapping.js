@@ -122,8 +122,6 @@ var PointSelectionMap = Class.create({
   map: null,
   geocoder: null,
   marker: null,
-  lat: null,
-  lon: null,
   
   initialize: function(container_id) {
     this.container_id  = container_id;
@@ -185,8 +183,6 @@ var PointSelectionMap = Class.create({
       alert(address + " not found");
     } else {
       this.map.setCenter(point, 13);
-      this.lat = point.lat();
-      this.lon = point.lng();
       if (this.marker) {
         this.map.removeOverlay(this.marker);
         this.marker.setLatLng(point);
@@ -207,8 +203,11 @@ var PointSelectionMap = Class.create({
   },
   
   writeLatLong: function(lat_id, long_id) {
-    $(lat_id).value = this.lat;
-    $(long_id).value = this.lon;
+    if (this.marker) {
+      point = this.marker.getLatLng();
+      $(lat_id).value = point.lat();
+      $(long_id).value = point.lng();      
+    }
   },
     
   

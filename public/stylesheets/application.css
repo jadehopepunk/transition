@@ -157,3 +157,8 @@ div.change_notice .change_time {
 .info_window p.description {
   margin-bottom: 0;
 }
+
+.address .suburb, .address .city {
+  display: inline;
+  margin-right: 0.5em;
+}

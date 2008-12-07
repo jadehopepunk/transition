@@ -37,7 +37,23 @@ class Pin < ActiveRecord::Base
     "/pins/#{to_param}"
   end
   
+  def resource_types
+    RESOURCE_TYPES.select {|key| send(key)}
+  end
+  
+  def human_readable_resource_types
+    resource_types.map do |resource_type|
+      humanize_resource_type(resource_type)
+    end
+  end
+
   protected
+  
+    def humanize_resource_type(resource_type)
+      result = resource_type.to_s
+      result = "provide_#{result}" if result.starts_with?('gardening')
+      result.humanize      
+    end
   
     def first_resource_type
       for type in RESOURCE_TYPES
@@ -47,7 +63,7 @@ class Pin < ActiveRecord::Base
     end
   
     def has_a_resource_type
-      if RESOURCE_TYPES.map {|key| send(key)}.select {|value| value}.empty?
+      if resource_types.empty?
         errors.add_to_base("You must select at least one of the checkboxes below")
       end
     end

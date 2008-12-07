@@ -19,11 +19,7 @@ class PinImagesController < ApplicationController
   protected
   
     def send_file_inline(filename)
-      if ENV['RAILS_ENV'] == 'development'
-        send_file(filename, :type => 'image/png', :disposition => 'inline')
-      else
-        x_send_file(filename, :type => 'image/png', :disposition => 'inline')
-      end
+      send_file(filename, :type => 'image/png', :disposition => 'inline')
     end
   
     def create_pin_image_file

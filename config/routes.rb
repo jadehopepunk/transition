@@ -24,7 +24,7 @@ ActionController::Routing::Routes.draw do |map|
   #     products.resources :sales, :collection => { :recent => :get }
   #   end
 
-  map.resources :map_regions, :pins
+  map.resources :map_regions, :pins, :pin_images
 
   map.namespace :admin do |admin|
     admin.resources :map_regions do |map_regions|

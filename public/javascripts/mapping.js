@@ -26,7 +26,7 @@ var RegionMap = Class.create({
       point = new GLatLng(pin.lat, pin.long)
 
       var icon = new GIcon(G_DEFAULT_ICON);
-      icon.image = "/pin_images/" + pin.code + '.png';
+      icon.image = "/pin_images/" + pin.to_param + '.png';
 
       var marker = new GMarker(point, {title: pin.name, icon: icon});
       this.map.addOverlay(marker);
@@ -36,7 +36,7 @@ var RegionMap = Class.create({
   },
   
   infoWindowHtml: function(pin) {
-    return '<div class="info_window"><h1>' + pin.name + '</h1><p class="description">' + pin.description + '</p></div>'
+    return '<div class="info_window"><h1>' + pin.name + '</h1><p class="description">' + pin.description + '</p><div><a href="' + pin.url + '">More about us</a></div></div>'
   },
   
   setBoundary: function(map_region) {

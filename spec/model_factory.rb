@@ -10,6 +10,18 @@ module ModelFactoryMixin
     def map_region(options = {})
       create MapRegion, options, :name => "Waitakere"
     end
+    
+    def pin(options = {})
+      create Pin, options, :name => "Craig's Vegie Garden",
+        :grow_food => true,
+        :map_region => map_region,
+        :lat => 10.0,
+        :long => 20.0,
+        :street_address => '17 Kay Rd',
+        :suburb => 'Swanson',
+        :city => 'Waitakere',
+        :country => 'New Zealand'      
+    end
         
     protected
     

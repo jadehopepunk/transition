@@ -62,7 +62,7 @@ class PinImagesController < ApplicationController
     end
     
     def final_images_dir
-      File.join(RAILS_ROOT, 'tmp', 'pin_images')
+      File.join(RAILS_ROOT, 'public', 'pin_images')
     end
     
     def colour_filename(colour_name)

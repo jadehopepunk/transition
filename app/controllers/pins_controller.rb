@@ -1,5 +1,6 @@
 class PinsController < ApplicationController
-  before_filter :load_map_region
+  before_filter :load_map_region, :only => [:new, :create]
+  before_filter :load_pin, :only => [:show]
   
   def new
     @pin = Pin.new(:map_region_id => params[:map_region_id], :country => "New Zealand")
@@ -14,6 +15,9 @@ class PinsController < ApplicationController
     end
   end
   
+  def show
+  end
+  
   protected
   
     def title
@@ -24,5 +28,9 @@ class PinsController < ApplicationController
       @map_region = @pin.map_region if @pin
       @map_region = MapRegion.find(params[:map_region_id]) if params[:map_region_id]
     end  
+    
+    def load_pin
+      @pin = Pin.find_by_param(params[:id])
+    end
   
 end

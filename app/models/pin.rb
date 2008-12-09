@@ -4,7 +4,7 @@
 # Table name: pins
 #
 #  id                    :integer(4)      not null, primary key
-#  map_region_id         :integer(4)
+#  _region_id         :integer(4)
 #  user_id               :integer(4)
 #  city                  :string(255)
 #  code                  :integer(4)
@@ -30,14 +30,14 @@ class Pin < ActiveRecord::Base
   RESOURCE_TYPES = [:grow_food, :make_food, :sell_food, :gardening_instruction, :gardening_products]
   COLOURS = [:green, :yellow, :blue, :red, :purple]
   
-  belongs_to :map_region
+  belongs_to :region
   belongs_to :user
   
   validate :has_a_resource_type
-  validates_presence_of :name, :map_region, :street_address, :suburb, :city, :country
+  validates_presence_of :name, :region, :street_address, :suburb, :city, :country
   validates_presence_of :lat, :long, :colour, :code
   validates_inclusion_of :colour, :in => COLOURS.map(&:to_s)
-  validates_uniqueness_of :code, :scope => [:map_region_id, :colour]
+  validates_uniqueness_of :code, :scope => [:region_id, :colour]
   
   before_validation_on_create :assign_colour
   before_save :set_user_from_email

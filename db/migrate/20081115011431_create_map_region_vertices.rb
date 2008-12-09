@@ -1,7 +1,7 @@
 class CreateMapRegionVertices < ActiveRecord::Migration
   def self.up
-    create_table :map_region_vertices do |t|
-      t.integer :map_region_id, :null => false
+    create_table :region_vertices do |t|
+      t.integer :region_id, :null => false
       t.integer :position
       t.float :lat, :long
 
@@ -10,6 +10,6 @@ class CreateMapRegionVertices < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :map_region_vertices
+    drop_table :region_vertices
   end
 end

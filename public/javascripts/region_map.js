@@ -1,11 +1,11 @@
 var RegionMap = Class.create({
-  initialize: function(container_id, map_region, boundary_editing) {
+  initialize: function(container_id, region, boundary_editing) {
     this.container_id  = container_id;
     this.map = null;
     this.boundary = null;
     this.boundary_markers = [];
     this.pin_markers = [];
-    this.map_region = map_region;
+    this.region = region;
     this.boundary_editing = boundary_editing;
   },
 
@@ -13,7 +13,7 @@ var RegionMap = Class.create({
     if (GBrowserIsCompatible()) {
       this.loaded = true;
       this.map = new GMap2(document.getElementById(this.container_id), {mapTypes: [G_NORMAL_MAP]});
-      this.map.setCenter(new GLatLng(this.map_region.center_lat, this.map_region.center_lon), this.map_region.default_zoom);
+      this.map.setCenter(new GLatLng(this.region.center_lat, this.region.center_lon), this.region.default_zoom);
 			this.map.addControl(new GLargeMapControl());
 			if (this.boundary_editing) {
   			this.enableBoundaryEditing();				  
@@ -39,21 +39,21 @@ var RegionMap = Class.create({
     return '<div class="info_window"><h1>' + pin.name + '</h1><p class="description">' + pin.description + '</p><div><a href="' + pin.url + '">More about us</a></div></div>'
   },
   
-  setBoundary: function(map_region) {
+  setBoundary: function(region) {
     this.clearBoundary();
     
-  	if (map_region.vertices.size() > 0) {
-  		var points = this.boundaryPoints(map_region);
+  	if (region.vertices.size() > 0) {
+  		var points = this.boundaryPoints(region);
   	  this.boundary = new GPolygon(points, "#090", 2, 1, "#090", 0.4);
   	  this.map.addOverlay(this.boundary);
 			if (this.boundary_editing) {
-  	    this.addBoundaryMarkers(map_region.vertices, map_region.vertices[map_region.vertices.length - 1], map_region.vertices[0]);
+  	    this.addBoundaryMarkers(region.vertices, region.vertices[region.vertices.length - 1], region.vertices[0]);
   	  }
   	}
   },
   
   enableBoundaryEditing: function() {
-    var url = '/admin/map_regions/' + this.map_region.id + '/map_region_vertices'
+    var url = '/admin/regions/' + this.region.id + '/region_vertices'
     this.enableClickHandler(url);
   },
   
@@ -72,9 +72,9 @@ var RegionMap = Class.create({
     }, this);
   },
   
-  boundaryPoints: function(map_region) {
-	  var first_vertex = map_region.vertices[0];
-		var points = map_region.vertices.collect(function(vertex) {
+  boundaryPoints: function(region) {
+	  var first_vertex = region.vertices[0];
+		var points = region.vertices.collect(function(vertex) {
 		  return this.pointFromVertex(vertex);
 		}, this);
 		points.push(this.pointFromVertex(first_vertex));

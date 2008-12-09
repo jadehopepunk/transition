@@ -1,10 +1,10 @@
 class PinsController < ApplicationController
-  before_filter :load_map_region, :only => [:new, :create]
+  before_filter :load_region, :only => [:new]
   before_filter :load_pin, :only => [:show]
   
   def new
-    @pin = Pin.new(:map_region_id => params[:map_region_id])
-    @pin.country = @pin.map_region.country if @pin.map_region
+    @pin = Pin.new(:region => find_region)
+    @pin.country = @pin.region.country if @pin.region
   end
   
   def create
@@ -25,10 +25,14 @@ class PinsController < ApplicationController
       "Resources for Resiliance"
     end
     
-    def load_map_region
-      @map_region = @pin.map_region if @pin
-      @map_region = MapRegion.find(params[:map_region_id]) if params[:map_region_id]
-    end  
+    def load_region
+      @region = @pin.region if @pin
+      @region = find_region
+    end
+    
+    def find_region
+      Region.find_by_param(params[:region_id]) if params[:region_id]
+    end
     
     def load_pin
       @pin = Pin.find_by_param(params[:id])

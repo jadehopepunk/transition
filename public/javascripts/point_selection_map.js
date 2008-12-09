@@ -8,15 +8,15 @@ var PointSelectionMap = Class.create({
   geocoder: null,
   marker: null,
   
-  initialize: function(container_id, map_region) {
+  initialize: function(container_id, region) {
     this.container_id  = container_id;
-    this.map_region = map_region;
+    this.region = region;
   },
 
   load: function() {
     if (GBrowserIsCompatible()) {
       this.map = new GMap2(document.getElementById(this.container_id), {mapTypes: [G_NORMAL_MAP]});
-      this.map.setCenter(new GLatLng(this.map_region.center_lat, this.map_region.center_lon), this.map_region.default_zoom);
+      this.map.setCenter(new GLatLng(this.region.center_lat, this.region.center_lon), this.region.default_zoom);
 			this.map.addControl(new GLargeMapControl());
 			this.geocoder = new GClientGeocoder();
     }

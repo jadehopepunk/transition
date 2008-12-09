@@ -9,32 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081209050145) do
-
-  create_table "map_region_vertices", :force => true do |t|
-    t.integer  "map_region_id", :null => false
-    t.integer  "position"
-    t.float    "lat"
-    t.float    "long"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "map_region_vertices", ["map_region_id"], :name => "map_region_id"
-
-  create_table "map_regions", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "permalink"
-    t.float    "center_lat"
-    t.float    "center_lon"
-    t.integer  "default_zoom"
-    t.string   "country"
-    t.string   "city"
-  end
-
-  add_index "map_regions", ["permalink"], :name => "index_map_regions_on_permalink"
+ActiveRecord::Schema.define(:version => 20081209054404) do
 
   create_table "pins", :force => true do |t|
     t.boolean  "grow_food"
@@ -50,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20081209050145) do
     t.string   "city"
     t.string   "email_address"
     t.string   "country"
-    t.integer  "map_region_id"
     t.float    "lat"
     t.float    "long"
     t.datetime "created_at"
@@ -58,10 +32,36 @@ ActiveRecord::Schema.define(:version => 20081209050145) do
     t.string   "colour"
     t.integer  "code"
     t.integer  "user_id"
+    t.integer  "region_id"
   end
 
-  add_index "pins", ["map_region_id"], :name => "map_region_id"
   add_index "pins", ["user_id"], :name => "user_id"
+  add_index "pins", ["region_id"], :name => "region_id"
+
+  create_table "region_vertices", :force => true do |t|
+    t.integer  "map_region_id", :null => false
+    t.integer  "position"
+    t.float    "lat"
+    t.float    "long"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "region_vertices", ["map_region_id"], :name => "map_region_id"
+
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "permalink"
+    t.float    "center_lat"
+    t.float    "center_lon"
+    t.integer  "default_zoom"
+    t.string   "country"
+    t.string   "city"
+  end
+
+  add_index "regions", ["permalink"], :name => "index_map_regions_on_permalink"
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -73,9 +73,9 @@ ActiveRecord::Schema.define(:version => 20081209050145) do
     t.datetime "updated_at"
   end
 
-  add_foreign_key "map_region_vertices", ["map_region_id"], "map_regions", ["id"], :name => "map_region_vertices_ibfk_1"
-
   add_foreign_key "pins", ["user_id"], "users", ["id"], :name => "pins_ibfk_2"
-  add_foreign_key "pins", ["map_region_id"], "map_regions", ["id"], :name => "pins_ibfk_1"
+  add_foreign_key "pins", ["region_id"], "regions", ["id"], :name => "pins_ibfk_3"
+
+  add_foreign_key "region_vertices", ["map_region_id"], "regions", ["id"], :name => "region_vertices_ibfk_1"
 
 end

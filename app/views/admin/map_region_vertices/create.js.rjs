@@ -1,3 +1,0 @@
-page << "region_map.setBoundary(#{@map_region.to_json(:include => :vertices)});"
-page.replace 'vertex_list', :partial => 'vertex_list', :object => @map_region.vertices
-page.visual_effect :highlight, dom_id(@vertex)

@@ -24,18 +24,22 @@ ActionController::Routing::Routes.draw do |map|
   #     products.resources :sales, :collection => { :recent => :get }
   #   end
 
-  map.resources :map_regions, :pins, :pin_images
+  map.resources :pin_images
   map.resource :session
+  
+  map.resources :regions do |region| 
+    region.resources :pins
+  end
 
   map.namespace :admin do |admin|
-    admin.resources :map_regions do |map_regions|
-      map_regions.resources :map_region_vertices, :collection => {:delete_all => :delete}
+    admin.resources :regions do |regions|
+      regions.resources :region_vertices, :collection => {:delete_all => :delete}
     end
     admin.resources :users
   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "map_regions", :action => "show", :id => "waitakere"
+  map.root :controller => "regions", :action => "show", :id => "waitakere"
 
   # See how all your routes lay out with "rake routes"
 

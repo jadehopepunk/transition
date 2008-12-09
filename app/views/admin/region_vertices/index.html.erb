@@ -3,11 +3,11 @@
   <script type="text/javascript">
     //<![CDATA[
 
-		var region_map = new RegionMap("map", <%= @map_region.to_json %>, true);
+		var region_map = new RegionMap("map", <%= @region.to_json %>, true);
 
     function load() {
 			region_map.load();
-			region_map.setBoundary(<%= @map_region.to_json(:include => :vertices) %>);
+			region_map.setBoundary(<%= @region.to_json(:include => :vertices) %>);
     }
 
     //]]>
@@ -17,14 +17,14 @@
 <% content_for :body_unload, "GUnload()" %>
 
 
-<h2><%=h @map_region.name %> Boundary</h2>
+<h2><%=h @region.name %> Boundary</h2>
 
 <div class="coordinate_list">
 	<h3>Boundary Coordinates <span class="subtitle">(Latitude, Longitude)</span></h3>
 
-	<%= render :partial => 'vertex_list', :object => @map_region.vertices %>
+	<%= render :partial => 'vertex_list', :object => @region.vertices %>
 	
-	<%= link_to_remote "Delete Them All", :url => delete_all_admin_map_region_map_region_vertices_path(@map_region), :method => :delete, :confirm => "This will delete the entire boundary and force you to start again. Are you sure?!" %>
+	<%= link_to_remote "Delete Them All", :url => delete_all_admin_region_region_vertices_path(@region), :method => :delete, :confirm => "This will delete the entire boundary and force you to start again. Are you sure?!" %>
 </div>
 
 <div id="map" class="google_map" style="width: 500px; height: 500px">google map goes here</div>

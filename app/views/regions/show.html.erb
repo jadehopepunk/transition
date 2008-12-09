@@ -3,12 +3,12 @@
   <script type="text/javascript">
     //<![CDATA[
 
-		var region_map = new RegionMap("map", <%= @map_region.to_json %>, false);
+		var region_map = new RegionMap("map", <%= @region.to_json %>, false);
 
     function load() {
 			region_map.load();
-			//region_map.setBoundary(<%= @map_region.to_json(:include => :vertices) %>);
-			region_map.displayPins(<%= @map_region.pins.to_json %>);
+			//region_map.setBoundary(<%= @region.to_json(:include => :vertices) %>);
+			region_map.displayPins(<%= @region.pins.to_json %>);
     }
 
     //]]>
@@ -22,6 +22,6 @@
 <h3>Do you know of some local food resources?</h3>
 
 <p>Do you grow, cook or sell food, or provide resources to help others who do? If so, then
-<%= link_to "click here", new_pin_path(:map_region_id => @map_region.id) %> to tell your 
+<%= link_to "click here", new_region_pin_path(@region) %> to tell your 
 local community about it.
 

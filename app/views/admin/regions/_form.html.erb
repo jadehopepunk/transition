@@ -3,7 +3,7 @@
   <script type="text/javascript">
     //<![CDATA[
 
-		var map = new CenterSelectionMap("map", 'map_region_center_lat', 'map_region_center_lon', 'map_region_default_zoom');
+		var map = new CenterSelectionMap("map", 'region_center_lat', 'region_center_lon', 'region_default_zoom');
 
     function load() {
 			map.load();
@@ -32,4 +32,4 @@ double clicking on that part of the map.</p>
 <%= f.text_field :center_lon %>
 <%= f.text_field :default_zoom %>
 
-<%= form_footer(:map_region, :cancel_link => admin_map_regions_path) %>
+<%= form_footer(:region, :cancel_link => admin_regions_path) %>

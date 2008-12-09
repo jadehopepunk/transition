@@ -6,7 +6,7 @@
 			<span class="info">
 				<%= h(user.name) %>
 				<% unless user.pins.empty? %>
-					(<%= user.pins.map {|pin| link_to h(pin.to_param), pin_path(pin)}.join(', ') %>)
+					(<%= user.pins.map {|pin| link_to h(pin.to_param), region_pin_path(pin.region, pin)}.join(', ') %>)
 				<% end %>
 			</span>
 			<span class="buttons">

@@ -12,7 +12,7 @@
 			<h1>Admin</h1>
 		</div>
 		<ul class="header_tabs">
-			<% for model in [:users, :map_regions] %>
+			<% for model in [:users, :regions] %>
 				<% active = (params[:controller] == "admin/#{model}") %>
 				<%= content_tag 'li', link_to(model.to_s.humanize, send("admin_#{model}_path".to_sym)), :class => (active ? 'active' : nil) %>
 			<% end %>

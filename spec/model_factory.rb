@@ -7,14 +7,14 @@ module ModelFactoryMixin
   class ModelFactory
     @@next_integer = 0
     
-    def map_region(options = {})
-      create MapRegion, options, :name => "Waitakere"
+    def region(options = {})
+      create Region, options, :name => "Waitakere"
     end
     
     def pin(options = {})
       create Pin, options, :name => "Craig's Vegie Garden",
         :grow_food => true,
-        :map_region => map_region,
+        :region => region,
         :lat => 10.0,
         :long => 20.0,
         :street_address => '17 Kay Rd',

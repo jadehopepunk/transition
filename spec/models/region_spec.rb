@@ -1,7 +1,7 @@
 # == Schema Info
 # Schema version: 20081209050145
 #
-# Table name: map_regions
+# Table name: regions
 #
 #  id           :integer(4)      not null, primary key
 #  center_lat   :float
@@ -16,7 +16,7 @@
 
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe MapRegion do
+describe Region do
   before(:each) do
     @valid_attributes = {
       :name => "Waitakere"
@@ -24,6 +24,6 @@ describe MapRegion do
   end
 
   it "should create a new instance given valid attributes" do
-    MapRegion.create!(@valid_attributes)
+    Region.create!(@valid_attributes)
   end
 end

@@ -15,6 +15,12 @@ div.header {
   height: auto;
 }
 
+div.footer {
+  border-top: solid #C33 2px;
+  padding: 10px;
+  margin-top: 100px;
+}
+
 div.header h1 {
   margin: 0;
 }

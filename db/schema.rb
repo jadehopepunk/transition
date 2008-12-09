@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081209013142) do
+ActiveRecord::Schema.define(:version => 20081209024828) do
 
   create_table "map_region_vertices", :force => true do |t|
     t.integer  "map_region_id", :null => false

@@ -3,7 +3,7 @@
   <script type="text/javascript">
     //<![CDATA[
 
-		var map = new PointSelectionMap("map");
+		var map = new PointSelectionMap("map", <%= @map_region.to_json %>);
 
 		function checkMapSectionDisplay() {
 			if ($('pin_street_address').value != '') {

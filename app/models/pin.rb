@@ -1,5 +1,5 @@
 # == Schema Info
-# Schema version: 20081209013142
+# Schema version: 20081209041038
 #
 # Table name: pins
 #

@@ -21,6 +21,15 @@ class Admin::MapRegionsController <  Admin::AdminController
   def edit
   end
   
+  def update
+    @map_region.update_attributes(params[:map_region])
+    if !@map_region.valid?
+      render :action => :edit
+    else
+      redirect_to :action => :index
+    end    
+  end
+  
   def destroy
     @map_region.destroy
     redirect_to :action => :index

@@ -1,5 +1,5 @@
 # == Schema Info
-# Schema version: 20081209050145
+# Schema version: 20081209054404
 #
 # Table name: regions
 #
@@ -17,13 +17,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Region do
-  before(:each) do
-    @valid_attributes = {
-      :name => "Waitakere"
-    }
-  end
-
   it "should create a new instance given valid attributes" do
-    Region.create!(@valid_attributes)
+    model_factory.region
   end
 end

@@ -1,10 +1,10 @@
 # == Schema Info
-# Schema version: 20081209041038
+# Schema version: 20081209054404
 #
 # Table name: region_vertices
 #
 #  id            :integer(4)      not null, primary key
-#  region_id :integer(4)      not null
+#  map_region_id :integer(4)      not null
 #  lat           :float
 #  long          :float
 #  position      :integer(4)

@@ -8,7 +8,7 @@ module ModelFactoryMixin
     @@next_integer = 0
     
     def region(options = {})
-      create Region, options, :name => "Waitakere"
+      create Region, options, :name => "Waitakere#{next_integer}", :city => 'Waitakere', :country => 'New Zealand', :center_lat => 1.0, :center_lon => 1.0, :default_zoom => 5
     end
     
     def pin(options = {})

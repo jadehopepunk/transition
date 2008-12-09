@@ -1,10 +1,10 @@
 # == Schema Info
-# Schema version: 20081209050145
+# Schema version: 20081209054404
 #
 # Table name: pins
 #
 #  id                    :integer(4)      not null, primary key
-#  _region_id         :integer(4)
+#  region_id             :integer(4)
 #  user_id               :integer(4)
 #  city                  :string(255)
 #  code                  :integer(4)

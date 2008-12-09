@@ -22,6 +22,10 @@ module ModelFactoryMixin
         :city => 'Waitakere',
         :country => 'New Zealand'      
     end
+    
+    def user(options = {})
+      create User, options, :email_address => "user#{next_integer}@craigambrose.com"
+    end
         
     protected
     

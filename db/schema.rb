@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081201070917) do
+ActiveRecord::Schema.define(:version => 20081209013142) do
 
   create_table "map_region_vertices", :force => true do |t|
     t.integer  "map_region_id", :null => false
@@ -47,12 +47,27 @@ ActiveRecord::Schema.define(:version => 20081201070917) do
     t.float    "long"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "colour"
+    t.integer  "code"
+    t.integer  "user_id"
   end
 
   add_index "pins", ["map_region_id"], :name => "map_region_id"
+  add_index "pins", ["user_id"], :name => "user_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email_address"
+    t.string   "password"
+    t.string   "auth_token"
+    t.boolean  "is_admin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   add_foreign_key "map_region_vertices", ["map_region_id"], "map_regions", ["id"], :name => "map_region_vertices_ibfk_1"
 
+  add_foreign_key "pins", ["user_id"], "users", ["id"], :name => "pins_ibfk_2"
   add_foreign_key "pins", ["map_region_id"], "map_regions", ["id"], :name => "pins_ibfk_1"
 
 end

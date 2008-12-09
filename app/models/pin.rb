@@ -1,8 +1,37 @@
+# == Schema Info
+# Schema version: 20081209013142
+#
+# Table name: pins
+#
+#  id                    :integer(4)      not null, primary key
+#  map_region_id         :integer(4)
+#  user_id               :integer(4)
+#  city                  :string(255)
+#  code                  :integer(4)
+#  colour                :string(255)
+#  country               :string(255)
+#  description           :text
+#  email_address         :string(255)
+#  gardening_instruction :boolean(1)
+#  gardening_products    :boolean(1)
+#  group_type            :string(255)
+#  grow_food             :boolean(1)
+#  lat                   :float
+#  long                  :float
+#  make_food             :boolean(1)
+#  name                  :string(255)
+#  sell_food             :boolean(1)
+#  street_address        :string(255)
+#  suburb                :string(255)
+#  created_at            :datetime
+#  updated_at            :datetime
+
 class Pin < ActiveRecord::Base
   RESOURCE_TYPES = [:grow_food, :make_food, :sell_food, :gardening_instruction, :gardening_products]
   COLOURS = [:green, :yellow, :blue, :red, :purple]
   
   belongs_to :map_region
+  belongs_to :user
   
   validate :has_a_resource_type
   validates_presence_of :name, :map_region, :street_address, :suburb, :city, :country
@@ -11,6 +40,7 @@ class Pin < ActiveRecord::Base
   validates_uniqueness_of :code, :scope => [:map_region_id, :colour]
   
   before_validation_on_create :assign_colour
+  before_save :set_user_from_email
   
   def self.find_by_param(param)
     unless param.blank?
@@ -81,6 +111,12 @@ class Pin < ActiveRecord::Base
       values = Pin.connection.select_values("SELECT code FROM pins WHERE code IS NOT NULL AND colour = '#{colour}' ORDER BY code ASC").map(&:to_i)
       max = values.last || 0
       ((1..max + 1).to_a - values).first || 1
+    end
+    
+    def set_user_from_email
+      if email_address && !user
+        self.user = User.find_by_email_address(email_address) || User.create(:email_address => email_address, :name => name)
+      end
     end
   
 end

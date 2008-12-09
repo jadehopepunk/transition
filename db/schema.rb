@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081209030030) do
+ActiveRecord::Schema.define(:version => 20081209050145) do
 
   create_table "map_region_vertices", :force => true do |t|
     t.integer  "map_region_id", :null => false
@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(:version => 20081209030030) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
+    t.float    "center_lat"
+    t.float    "center_lon"
+    t.integer  "default_zoom"
+    t.string   "country"
+    t.string   "city"
   end
 
   add_index "map_regions", ["permalink"], :name => "index_map_regions_on_permalink"

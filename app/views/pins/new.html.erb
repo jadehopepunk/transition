@@ -74,7 +74,13 @@
 	
 	<%= f.text_field :suburb, :onblur => "map.updateSuburb(this.value);", :onchange => "checkMapSectionDisplay();" %>
 
-	<%= f.text_field :city, :onblur => "map.updateCity(this.value);", :onchange => "checkMapSectionDisplay();" %>
+	<% if @pin.map_region.has_city? %>
+		<%= f.text_field :city, :disabled => true, :value => @pin.map_region.city %>
+		<%= f.hidden_field :city, :value => @pin.map_region.city %>
+	<% else %>
+		<%= f.text_field :city, :onblur => "map.updateCity(this.value);", :onchange => "checkMapSectionDisplay();" %>
+	<% end %>
+	
 
 	<div id="map_section" style="display: none">
 		<h3>Putting you on our map</h3>
@@ -88,6 +94,6 @@
 		<div id="map" class="google_map" style="width: 400px; height: 500px; margin-top: 1em"></div>
 	</div>
 	
-	<%= form_footer(:pin, :cancel_link => map_region_path(@map_region)) %>
+	<%= form_footer(:pin, :cancel_link => map_region_path(@pin.map_region)) %>
 <% end %>
 

@@ -1,5 +1,5 @@
 # == Schema Info
-# Schema version: 20081209041038
+# Schema version: 20081209050145
 #
 # Table name: pins
 #
@@ -102,8 +102,8 @@ class Pin < ActiveRecord::Base
       self.code = next_available_code if !self.code && self.colour
     end
     
-    def assign_colour
-      self.colour = COLOURS[RESOURCE_TYPES.index(first_resource_type)].to_s
+    def assign_colour      
+      self.colour = COLOURS[RESOURCE_TYPES.index(first_resource_type)].to_s if first_resource_type
       assign_code
     end
     

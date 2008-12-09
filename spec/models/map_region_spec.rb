@@ -1,11 +1,13 @@
 # == Schema Info
-# Schema version: 20081209041038
+# Schema version: 20081209050145
 #
 # Table name: map_regions
 #
 #  id           :integer(4)      not null, primary key
 #  center_lat   :float
 #  center_lon   :float
+#  city         :string(255)
+#  country      :string(255)
 #  default_zoom :integer(4)
 #  name         :string(255)
 #  permalink    :string(255)

@@ -1,5 +1,5 @@
 class Admin::MapRegionsController <  Admin::AdminController
-  before_filter :load_map_region, :only => :destroy
+  before_filter :load_map_region, :only => [:destroy, :edit, :update]
   
   def index
     @map_regions = MapRegion.find(:all)
@@ -18,6 +18,9 @@ class Admin::MapRegionsController <  Admin::AdminController
     end
   end
   
+  def edit
+  end
+  
   def destroy
     @map_region.destroy
     redirect_to :action => :index
@@ -26,7 +29,7 @@ class Admin::MapRegionsController <  Admin::AdminController
   protected
   
     def load_map_region
-      @map_region = MapRegion.find(params[:id])
+      @map_region = MapRegion.find_by_param(params[:id])
     end
   
 end

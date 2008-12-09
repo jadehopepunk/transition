@@ -11,12 +11,18 @@
 			<%= render :partial => 'layouts/login_details' %>
 			<h1>Admin</h1>
 		</div>
+		<ul class="header_tabs">
+			<% for model in [:users, :map_regions] %>
+				<% active = (params[:controller] == "admin/#{model}") %>
+				<%= content_tag 'li', link_to(model.to_s.humanize, send("admin_#{model}_path".to_sym)), :class => (active ? 'active' : nil) %>
+			<% end %>
+		</ul>
 		<div class="body_container">
 			<div class="page_content">
 				<%= yield %>
 			</div>
 		</div>
-		<div class="footer">
+		<div class="page_footer">
 			<%= link_to "Got to main site", '/' %>
 		</div>	
 	</body>

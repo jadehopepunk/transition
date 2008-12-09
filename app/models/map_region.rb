@@ -13,5 +13,18 @@ class MapRegion < ActiveRecord::Base
   has_many :pins
 
   validates_presence_of :name
+  has_permalink :name, :unique => true
+  
+  def to_param
+    permalink
+  end
+  
+  def self.find_by_param(param)
+    result = MapRegion.find_by_permalink(param)
+    raise ActiveRecord::RecordNotFound unless result
+    result
+  end
+  
+  
     
 end

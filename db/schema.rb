@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081209024828) do
+ActiveRecord::Schema.define(:version => 20081209030030) do
 
   create_table "map_region_vertices", :force => true do |t|
     t.integer  "map_region_id", :null => false
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(:version => 20081209024828) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "permalink"
   end
+
+  add_index "map_regions", ["permalink"], :name => "index_map_regions_on_permalink"
 
   create_table "pins", :force => true do |t|
     t.boolean  "grow_food"

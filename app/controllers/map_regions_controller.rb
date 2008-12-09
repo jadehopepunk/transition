@@ -7,7 +7,7 @@ class MapRegionsController < ApplicationController
   protected
   
     def load_map_region
-      @map_region = MapRegion.find(params[:id])
+      @map_region = MapRegion.find_by_param(params[:id])
     end
 
     def title

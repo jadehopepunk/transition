@@ -11,5 +11,8 @@ class Admin::AdminController < ApplicationController
       end
     end
     
+    def load_region
+      @region = Region.find_by_param(params[:region_id]) if params[:region_id]
+    end
   
 end

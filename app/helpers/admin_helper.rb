@@ -6,5 +6,5 @@ module AdminHelper
     results << :regions
     results
   end
-  
+    
 end

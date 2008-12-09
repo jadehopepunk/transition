@@ -11,12 +11,29 @@
 			<%= render :partial => 'layouts/login_details' %>
 			<h1>Admin</h1>
 		</div>
-		<ul class="header_tabs">
-			<% for model in available_admin_controllers %>
-				<% active = (params[:controller] == "admin/#{model}") %>
-				<%= content_tag 'li', link_to(model.to_s.humanize, send("admin_#{model}_path".to_sym)), :class => (active ? 'active' : nil) %>
+		<div class="header_tabs">
+			<% if is_admin? %>
+				<div class="region_selector">
+					<span><%= link_to "All Regions", params.merge(:region_id => nil) %></span> |
+					<% if @region %>
+						<span class="selected"><%=h @region.name %></span>
+					<% else %>
+						<select onchange="if (this.selectedIndex > 0) document.location = '/admin/regions/' + this.options[this.selectedIndex].value + '/users';">
+							<option></option>
+							<% for region in Region.find(:all, :order => :name) %>
+								<%= content_tag 'option', h(region.name), :value => region.to_param %>
+							<% end %>
+						</select>
+					<% end %>
+				</div>
 			<% end %>
-		</ul>
+			<ul>
+				<% for model in available_admin_controllers %>
+					<% active = (params[:controller] == "admin/#{model}") %>
+					<%= content_tag 'li', link_to(model.to_s.humanize, send("admin_#{model}_path".to_sym)), :class => (active ? 'active' : nil) %>
+				<% end %>
+			</ul>			
+		</div>
 		<div class="body_container">
 			<div class="page_content">
 				<%= yield %>

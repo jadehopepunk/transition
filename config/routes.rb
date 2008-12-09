@@ -34,6 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.resources :regions do |regions|
       regions.resources :region_vertices, :collection => {:delete_all => :delete}
+      regions.resources :users
     end
     admin.resources :users
   end

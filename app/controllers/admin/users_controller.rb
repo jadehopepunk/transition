@@ -1,6 +1,7 @@
 class Admin::UsersController < Admin::AdminController
   before_filter :admin_required
   before_filter :load_user, :only => [:edit, :update, :destroy]
+  before_filter :load_region
   
   def index
     @users = User.find(:all, :order => "created_at ASC")

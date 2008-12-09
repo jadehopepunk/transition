@@ -1,0 +1,6 @@
+<h1>Edit User</h1>
+
+<% form_for :user, @user,  :url => admin_user_path(@user), :html => {:method => :put}, :builder => LabelledBuilder do |f| %>
+	<%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
+

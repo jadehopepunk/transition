@@ -8,6 +8,7 @@
 	</head>
 	<body onload="<%= yield :body_load %>" onunload="<%= yield :body_unload %>">
 		<div class="header">
+			<%= render :partial => 'layouts/login_details' %>
 			<h1>Admin</h1>
 		</div>
 		<div class="body_container">

@@ -1,0 +1,20 @@
+<h2>Users</h2>
+
+<div class="record_index">
+	<% for user in @users %>
+		<div class="record_row">
+			<span class="info">
+				<%= h(user.name) %>
+				<% unless user.pins.empty? %>
+					(<%= user.pins.map {|pin| link_to h(pin.code), pin_path(pin)}.join(', ') %>)
+				<% end %>
+			</span>
+			<span class="buttons">
+				<%= link_to "edit", edit_admin_user_path(user) %>
+				<%= link_to "delete", admin_user_path(user), :method => :delete, :confirm => "Are you sure??!" %>
+			</span>
+		</div>
+	<% end %>
+</div>
+
+<%= link_to "Create New", new_admin_user_path %>

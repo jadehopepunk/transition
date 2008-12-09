@@ -15,5 +15,11 @@
 class User < ActiveRecord::Base
   attr_protected :is_admin  
   validates_presence_of :email_address
+  validates_uniqueness_of :email_address
+  
   has_many :pins, :dependent => :destroy
+  
+  def self.authenticate(email_address, password)
+    User.find(:first, :conditions => {:emaiL_address => email_address, :password => password})
+  end
 end

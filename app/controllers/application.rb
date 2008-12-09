@@ -3,6 +3,8 @@
 
 class ApplicationController < ActionController::Base
   helper :all
+  
+  include LoginSystem
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -14,11 +16,6 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   protected
-  
-    def logged_in?
-      true
-    end
-    helper_method :logged_in?
   
     def title
       "Transition Maps"

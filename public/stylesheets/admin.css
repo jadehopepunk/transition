@@ -11,6 +11,8 @@ div.header {
   background-color: #F93;
   padding: 10px;
   border-bottom: solid #C33 2px;
+  background-image: none;
+  height: auto;
 }
 
 div.header h1 {
@@ -52,4 +54,8 @@ h1, h2 {
 
 .coordinate_list h3 {
   margin-top: 0;
+}
+
+.login_details {
+  float: right;
 }

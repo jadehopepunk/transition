@@ -1,0 +1,8 @@
+<% form_for :user, :url => admin_users_path, :method => :post, :builder => LabelledBuilder do |f| %>
+	<%= f.text_field :name %>
+	<%= f.text_field :email_address %>
+	<%= f.text_field(:password) if @user.new_record? %>
+	<%= f.check_box :is_admin %>
+
+	<%= form_footer(:user, :cancel_link => admin_users_path) %>
+<% end %>

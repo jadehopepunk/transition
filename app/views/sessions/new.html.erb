@@ -1,0 +1,20 @@
+<h1>Login</h1>
+
+<% form_tag session_url do -%>
+
+	<% if @error %>
+		<div class="flash_error">
+			<%= @error %>
+		</div>
+	<% end %>
+
+  <label for="login_user_nick">Email</label>
+  <%= text_field_tag('email_address', nil,  :size => 30, :class => 'text_field') %>
+
+  <label for="login_user_nick">Password</label>
+	<%= password_field_tag('password', nil, :size => 30, :class => 'text_field') %>
+	
+	<%= form_footer :login, :submit_name => 'Login', :cancel_link => '/', :requires_login => false %>
+
+<% end -%>	
+

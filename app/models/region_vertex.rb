@@ -1,5 +1,5 @@
 # == Schema Info
-# Schema version: 20081209054404
+# Schema version: 20081209070454
 #
 # Table name: region_vertices
 #

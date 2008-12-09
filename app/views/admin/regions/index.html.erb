@@ -1,4 +1,4 @@
-<h2>Map Regions</h2>
+<h2><%= is_admin? ? "Map Regions" : "Your Regions" %></h2>
 
 <div class="record_index">
 	<% for region in @regions %>
@@ -7,11 +7,15 @@
 			<span class="buttons">
 				<%= link_to "view", region_path(region) %>
 				<%= link_to "edit", edit_admin_region_path(region) %>
-				<%#= link_to "boundaries", admin_region_region_vertices_path(region) %>
-				<%= link_to "delete", admin_region_path(region), :method => :delete, :confirm => "Are you sure??!" %>
+				<% if is_admin? %>
+					<%#= link_to "boundaries", admin_region_region_vertices_path(region) %>
+					<%= link_to "delete", admin_region_path(region), :method => :delete, :confirm => "Are you sure??!" %>
+				<% end %>
 			</span>
 		</div>
 	<% end %>
 </div>
 
-<%= link_to "Create New", new_admin_region_path %>
+<% if is_admin? %>
+	<%= link_to "Create New", new_admin_region_path %>
+<% end %>

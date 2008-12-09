@@ -1,4 +1,5 @@
 class Admin::UsersController < Admin::AdminController
+  before_filter :admin_required
   before_filter :load_user, :only => [:edit, :update, :destroy]
   
   def index

@@ -10,7 +10,7 @@ a {
 div.header {
   background-color: #F93;
   padding: 10px;
-  border-bottom: solid #C33 2px;
+  border: 0;
   background-image: none;
   height: auto;
 }

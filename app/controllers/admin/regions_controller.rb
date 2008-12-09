@@ -1,8 +1,15 @@
 class Admin::RegionsController <  Admin::AdminController
+  before_filter :admin_required, :except => [:edit, :update, :show, :index]
+  before_filter :login_required, :except => [:index]
   before_filter :load_region, :only => [:destroy, :edit, :update]
+  before_filter :region_admin_required, :only => [:edit, :update, :update]
   
   def index
-    @regions = Region.find(:all)
+    if is_admin?
+      @regions = Region.find(:all, :order => :name)
+    else
+      @regions = Region.find(:all, :order => :name, :conditions => ["id IN (SELECT region_id FROM region_privileges WHERE user_id = ?)", current_user])
+    end
   end
   
   def new

@@ -3,6 +3,8 @@
 
 class ApplicationController < ActionController::Base
   helper :all
+  helper_method :title
+  helper_method :is_admin?
   
   include LoginSystem
 
@@ -20,6 +22,5 @@ class ApplicationController < ActionController::Base
     def title
       "Transition Maps"
     end
-    helper_method :title
   
 end

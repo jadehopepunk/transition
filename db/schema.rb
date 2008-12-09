@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081209054404) do
+ActiveRecord::Schema.define(:version => 20081209070454) do
 
   create_table "pins", :force => true do |t|
     t.boolean  "grow_food"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(:version => 20081209054404) do
 
   add_index "pins", ["user_id"], :name => "user_id"
   add_index "pins", ["region_id"], :name => "region_id"
+
+  create_table "region_privileges", :force => true do |t|
+    t.integer  "region_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "region_privileges", ["region_id"], :name => "region_id"
+  add_index "region_privileges", ["user_id"], :name => "user_id"
 
   create_table "region_vertices", :force => true do |t|
     t.integer  "map_region_id", :null => false
@@ -75,6 +85,9 @@ ActiveRecord::Schema.define(:version => 20081209054404) do
 
   add_foreign_key "pins", ["user_id"], "users", ["id"], :name => "pins_ibfk_2"
   add_foreign_key "pins", ["region_id"], "regions", ["id"], :name => "pins_ibfk_3"
+
+  add_foreign_key "region_privileges", ["region_id"], "regions", ["id"], :name => "region_privileges_ibfk_1"
+  add_foreign_key "region_privileges", ["user_id"], "users", ["id"], :name => "region_privileges_ibfk_2"
 
   add_foreign_key "region_vertices", ["map_region_id"], "regions", ["id"], :name => "region_vertices_ibfk_1"
 

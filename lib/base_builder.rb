@@ -31,6 +31,14 @@ class BaseBuilder < ActionView::Helpers::FormBuilder
   def textile_editor(method_name, options)
     @template.textile_editor(@object_name, method_name, options)
   end
+  
+  def radio_group(method_name, values, options)
+    controls = values.map do |value|
+      input = @template.radio_button(@object_name, method_name, value)
+      @template.content_tag('span', input + ' ' + value, :class => 'radio_container')
+    end
+    controls.join("\n")
+  end
 
 
 end

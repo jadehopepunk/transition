@@ -31,7 +31,7 @@ class LabelledBuilder < BaseBuilder
       error_fields = [label]
       error_fields += other_validation_fields if other_validation_fields
       error_text = error_fields.map do |error_field|
-        @template.error_message_on(@object_name, error_field, "<strong>Sorry</strong>, #{field_human_name} ")
+        @template.error_message_on(@object_name, error_field, :prepend_text => "<strong>Sorry</strong>, #{field_human_name} ")
       end
       error_text = error_text.join(' ')
       
@@ -45,7 +45,7 @@ class LabelledBuilder < BaseBuilder
     end
   end
   
-  (field_helpers + [:select, :image_selector, :rating_selector, :textile_editor]).uniq.each do |name|
+  (field_helpers + [:select, :image_selector, :rating_selector, :textile_editor, :radio_group]).uniq.each do |name|
     create_labelled_field(name) unless name == 'hidden_field'
   end
 

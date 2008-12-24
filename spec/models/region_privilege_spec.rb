@@ -14,6 +14,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe RegionPrivilege do
   before(:each) do
     @valid_attributes = {
+      :region => model_factory.region,
+      :user => model_factory.user
     }
   end
 

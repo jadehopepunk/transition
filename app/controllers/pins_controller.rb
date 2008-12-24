@@ -3,8 +3,12 @@ class PinsController < ApplicationController
   before_filter :load_pin, :only => [:show]
   
   def new
-    @pin = Pin.new(:region => find_region)
-    @pin.country = @pin.region.country if @pin.region
+    initialize_new_pin
+  end
+  
+  def new_printable
+    initialize_new_pin
+    render :action => :new, :layout => 'printable'
   end
   
   def create
@@ -20,6 +24,11 @@ class PinsController < ApplicationController
   end
   
   protected
+  
+    def initialize_new_pin
+      @pin = Pin.new(:region => find_region)
+      @pin.country = @pin.region.country if @pin.region
+    end
   
     def title
       "Resources for Resiliance"

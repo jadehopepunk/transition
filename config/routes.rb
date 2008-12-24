@@ -28,7 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   
   map.resources :regions do |region| 
-    region.resources :pins
+    region.resources :pins, :collection => {:new_printable => :get}
   end
 
   map.namespace :admin do |admin|

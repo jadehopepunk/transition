@@ -63,8 +63,8 @@
 	<%= f.text_area :description, :hint => "More detail, or some examples, of the boxes you ticked above" %>
 
 	<h3>Who we are</h3>	
-
-	<%= f.select :group_type, ["Household", "Business", "Organisation"], :label => "We are a" %>
+	
+	<%= f.radio_group :group_type, ["Household", "Business", "Organisation"], :label => "We are a" %>
 	
 	<%= f.text_field :name, :label => "Name(s)" %>
 	
@@ -88,12 +88,12 @@
 		<p>We've put a marker where we think you are (once you've filled in the address above). If it's not
 		correct, you can drag the marker around.</p>
 
-		<%= error_message_on :pin, :lat, "<strong>Sorry</strong>, Latitude " %>
-		<%= error_message_on :pin, :long, "<strong>Sorry</strong>, Longitude " %>
+		<%= error_message_on :pin, :lat, :prepend_text => "<strong>Sorry</strong>, Latitude " %>
+		<%= error_message_on :pin, :long, :prepend_text => "<strong>Sorry</strong>, Longitude " %>
 
 		<div id="map" class="google_map" style="width: 400px; height: 500px; margin-top: 1em"></div>
 	</div>
 	
-	<%= form_footer(:pin, :cancel_link => region_path(@pin.region)) %>
+	<%= form_footer(:pin, :cancel_link => region_path(@pin.region), :requires_login => false) %>
 <% end %>
 

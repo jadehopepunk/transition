@@ -35,7 +35,7 @@ module FormExtensionsHelper
   end
   
   def not_logged_in_form_footer
-    as_footer "<div class=\"login_required\">You are going to need to #{link_to('login or signup', new_session_path)} to playful bent in order to do this.</div>"
+    as_footer "<div class=\"login_required\">You are going to need to #{link_to('login or signup', new_session_path)} in order to do this.</div>"
   end
   
   def form_step(step_number, current_step, title = nil, &proc)

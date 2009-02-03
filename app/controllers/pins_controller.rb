@@ -8,7 +8,7 @@ class PinsController < ApplicationController
   
   def new_printable
     initialize_new_pin
-    render :action => :new, :layout => 'printable'
+    render :layout => 'printable'
   end
   
   def create

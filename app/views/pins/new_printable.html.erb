@@ -1,0 +1,92 @@
+<% content_for :head do %>
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= AppConfig.google_maps_key %>" type="text/javascript"></script>
+  <script type="text/javascript">
+    //<![CDATA[
+
+		var map = new PointSelectionMap("map", <%= @region.to_json %>);
+
+		function checkMapSectionDisplay() {
+			if ($('pin_street_address').value != '') {
+				$('map_section').show();
+				if (!map.loaded) {
+					map.load();
+					
+					var start_address = {
+						'street_address': $('pin_street_address').value,
+						'suburb': $('pin_suburb').value,
+						'city': $('pin_city').value,
+						'country': $('pin_country').value,
+					}
+					map.updateAddress(start_address, 'pin_lat', 'pin_long');					
+				}
+			}
+		}
+
+    function load() {
+			checkMapSectionDisplay();
+    }
+
+    //]]>
+  </script>			
+<% end %>
+<% content_for :body_load, "load()" %>
+<% content_for :body_unload, "GUnload()" %>
+
+<h2>Put something on the map</h2>
+
+<% form_for :pin, :url => region_pins_path(@pin.region), :method => :post, :builder => LabelledBuilder, :html => {:onsubmit => "map.writeLatLong('pin_lat', 'pin_long'); return true;"} do |f| %>
+	<%= f.hidden_field :region_id %>
+	<%= f.hidden_field :lat %>
+	<%= f.hidden_field :long %>	
+	<%= f.hidden_field :country %>	
+
+	<p>We're excited about finding out about the resources available in our local community.</p>
+
+	<p>Does your household or business create a product or service that you might consider
+	selling, trading, swapping or gifting to others? Tell us about it, and we'll pop you on
+	our map of local goods and services.</p>
+
+	<%= error_messages_for :pin %>
+
+	<h3>We produce</h3>
+	
+	<%= error_message_on :pin, :base %>
+
+	<div class="checkbox_collection">
+		<%= f.check_box :grow_food, :label => "Food we grow (green)" %>
+		<%= f.check_box :make_food, :label => "Food we make from local ingredients (yellow)" %>
+		<%= f.check_box :sell_food, :label => "Local food for sale, produced by others (red)" %>
+		<%= f.check_box :gardening_instruction, :label => "Gardening/Farming Interest or Instruction (blue)" %>
+		<%= f.check_box :gardening_products, :label => "Products for Gardeners or Farmers (purle)" %>		
+	</div>
+	
+	<%= f.text_area :description, :hint => "More detail, or some examples, of the boxes you ticked above" %>
+
+	<h3>Who we are</h3>	
+	
+	<%= f.radio_group :group_type, ["Household", "Business", "Organisation"], :label => "We are a" %>
+	
+	<%= f.text_field :name, :label => "Name(s)" %>
+	
+	<%= f.text_field :email_address, :hint => "If you supply an email address, you can edit these details online" %>
+
+	<%= f.text_field :street_address, :onblur => "map.updateStreetAddress(this.value);", :onchange => "checkMapSectionDisplay();" %>
+	
+	<%= f.text_field :suburb, :onblur => "map.updateSuburb(this.value);", :onchange => "checkMapSectionDisplay();" %>
+	
+
+	<div id="map_section" style="display: none">
+		<h3>Putting you on our map</h3>
+
+		<p>We've put a marker where we think you are (once you've filled in the address above). If it's not
+		correct, you can drag the marker around.</p>
+
+		<%= error_message_on :pin, :lat, :prepend_text => "<strong>Sorry</strong>, Latitude " %>
+		<%= error_message_on :pin, :long, :prepend_text => "<strong>Sorry</strong>, Longitude " %>
+
+		<div id="map" class="google_map" style="width: 400px; height: 500px; margin-top: 1em"></div>
+	</div>
+	
+	<%#= form_footer(:pin, :cancel_link => region_path(@pin.region), :requires_login => false) %>
+<% end %>
+

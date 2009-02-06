@@ -22,4 +22,9 @@ class User < ActiveRecord::Base
   def self.authenticate(email_address, password)
     User.find(:first, :conditions => {:emaiL_address => email_address, :password => password})
   end
+  
+  def default_pin
+    pins.first
+  end
+  
 end

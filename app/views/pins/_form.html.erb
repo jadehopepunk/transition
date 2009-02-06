@@ -1,0 +1,81 @@
+<% content_for :head do %>
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= AppConfig.google_maps_key %>" type="text/javascript"></script>
+  <script type="text/javascript">
+    //<![CDATA[
+
+		var map = new PointSelectionMap("map", <%= @region.to_json %>);
+
+		function checkMapSectionDisplay() {
+			if ($('pin_street_address').value != '') {
+				$('map_section').show();
+				if (!map.loaded) {
+					map.load();
+					
+					var start_address = {
+						'street_address': $('pin_street_address').value,
+						'suburb': $('pin_suburb').value,
+						'city': $('pin_city').value,
+						'country': $('pin_country').value,
+					}
+					map.updateAddress(start_address, 'pin_lat', 'pin_long');					
+				}
+			}
+		}
+
+    function load() {
+			checkMapSectionDisplay();
+    }
+
+    //]]>
+  </script>			
+<% end %>
+<% content_for :body_load, "load()" %>
+<% content_for :body_unload, "GUnload()" %>
+
+<%= error_messages_for :pin %>
+
+<h3>We produce</h3>
+
+<%= error_message_on :pin, :base %>
+
+<div class="checkbox_collection">
+	<%= f.check_box :grow_food, :label => "Food we grow" %>
+	<%= f.check_box :make_food, :label => "Food we make from local ingredients" %>
+	<%= f.check_box :sell_food, :label => "Local food for sale, produced by others" %>
+	<%= f.check_box :gardening_instruction, :label => "Gardening/Farming Interest or Instruction" %>
+	<%= f.check_box :gardening_products, :label => "Products for Gardeners or Farmers" %>		
+</div>
+
+<%= f.text_area :description, :hint => "More detail, or some examples, of the boxes you ticked above" %>
+
+<h3>Who we are</h3>	
+
+<%= f.radio_group :group_type, ["Household", "Business", "Organisation"], :label => "We are a" %>
+
+<%= f.text_field :name, :label => "Name(s)" %>
+
+<%= f.text_field :email_address, :hint => "Your email address is optional, but lets you come back and edit these details later" %>
+
+<%= f.text_field :street_address, :onblur => "map.updateStreetAddress(this.value);", :onchange => "checkMapSectionDisplay();" %>
+
+<%= f.text_field :suburb, :onblur => "map.updateSuburb(this.value);", :onchange => "checkMapSectionDisplay();" %>
+
+<% if @pin.region.has_city? %>
+	<%= f.text_field :city, :disabled => true, :value => @pin.region.city %>
+	<%= f.hidden_field :city, :value => @pin.region.city %>
+<% else %>
+	<%= f.text_field :city, :onblur => "map.updateCity(this.value);", :onchange => "checkMapSectionDisplay();" %>
+<% end %>
+
+
+<div id="map_section" style="display: none">
+	<h3>Putting you on our map</h3>
+
+	<p>We've put a marker where we think you are (once you've filled in the address above). If it's not
+	correct, you can drag the marker around.</p>
+
+	<%= error_message_on :pin, :lat, :prepend_text => "<strong>Sorry</strong>, Latitude " %>
+	<%= error_message_on :pin, :long, :prepend_text => "<strong>Sorry</strong>, Longitude " %>
+
+	<div id="map" class="google_map" style="width: 400px; height: 500px; margin-top: 1em"></div>
+</div>

@@ -17,20 +17,38 @@
 <% content_for :body_load, "load()" %>
 <% content_for :body_unload, "GUnload()" %>
 
+<br style="clear: both" />
 <div id="map" class="google_map" style="width: 400px; height: 500px; float: left; margin: 0 10px 10px 0"></div>
 
-<h2>We're Moving</h2>
+<div class="map_explanation">
+	<% if false %>
+		<h2>We're Moving</h2>
 
-<p>Sorry, you can't add anything onto this map right now, we're moving it onto a new computer. If you
-added your pin to the physical map at Swanson market last weekend, you should receive an email from
-us in a couple of days when the new server is up and working.</p>
+		<p>Sorry, you can't add anything onto this map right now, we're moving it onto a new computer. If you
+		added your pin to the physical map at Swanson market last weekend, you should receive an email from
+		us in a couple of days when the new server is up and working.</p>
+	<% end %>
 
-<!--
+	<% if logged_in? %>
+		<h3>You're on the map</h3>
 
-<h3>Do you know of some local food resources?</h3>
+		<p>Welcome back. You can use this map to explore local food around you.</p>
 
-<p>Do you grow, cook or sell food, or provide resources to help others who do? If so, then
-<%= link_to "click here", new_region_pin_path(@region) %> to tell your 
-local community about it.
+		<ul>
+			<% if current_user.default_pin -%>
+				<li><%= link_to_function("Center the map on me", "region_map.centerOnPin(#{current_user.default_pin.to_param.to_json})") %></li>
+				<li><%= link_to "View my details", region_pin_path(@region, current_user.default_pin) %></li>
+				<li><%= link_to "Edit my details", edit_region_pin_path(@region, current_user.default_pin) %></li>
+			<% end -%>
+		</ul>
 
--->
+	<% else %>
+		<h3>Do you know of some local food resources?</h3>
+
+		<p>Do you grow, cook or sell food, or provide resources to help others who do? If so, then
+		<%= link_to "click here", new_region_pin_path(@region) %> to tell your 
+		local community about it.
+	<% end %>	
+</div>
+
+<br style="clear: both" />

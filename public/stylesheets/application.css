@@ -13,17 +13,27 @@ h1 {
   color: #006;
 }
 
+a, a:link, a:visited {
+  color: #333399;
+}
+
+a:hover {
+  color: #0000FF;
+}
+
 .header {
   height: 130px;
-  background-image: url('../images/logo.jpg');
-  background-repeat: no-repeat;
-  background-position: top left;
   border: 1px solid white;
-  padding-left: 110px;
 }
 
 .header h1 {
   margin-bottom: 0;
+}
+
+.header img.logo {
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .header h2 {
@@ -33,6 +43,10 @@ h1 {
   display: inline;
   padding-right: 2em;
   padding-bottom: 2px;
+}
+
+.header .button_bar {
+  margin-top: 20px;
 }
 
 .body_container {
@@ -161,4 +175,9 @@ div.change_notice .change_time {
 .address .suburb, .address .city {
   display: inline;
   margin-right: 0.5em;
+}
+
+
+.map_explanation {
+  float: left;
 }

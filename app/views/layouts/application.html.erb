@@ -8,8 +8,16 @@
 	</head>
 	<body onload="<%= yield :body_load %>" onunload="<%= yield :body_unload %>">
 		<div class="header">
+			<%= image_tag 'logo.jpg', :alt => 'logo', :class => 'logo' %>
 			<h1><%=h title %></h1>
 			<h2 class="subtitle">Building resilient communities by supporting local food, local people &amp; local jobs</h2>
+			<div class="button_bar">
+				<% if logged_in? %>
+					Welcome <strong><%= current_user.name %></strong> (<%= link_to 'logout', session_path, :method => :delete %>)
+				<% else %>
+					Already on the map? You can <%= link_to "log-in", new_session_path %> to make changes.
+				<% end %>
+			</div>
 		</div>
 		<div class="body_container">
 			<div class="page_content">

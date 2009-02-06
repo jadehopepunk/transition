@@ -1,0 +1,16 @@
+
+<h2>Edit your map details</h2>
+
+<% form_for :pin, :url => region_pin_path(@pin.region, @pin), :builder => LabelledBuilder, :html => {:onsubmit => "map.writeLatLong('pin_lat', 'pin_long'); return true;", :method => :put} do |f| %>
+	<%= f.hidden_field :region_id %>
+	<%= f.hidden_field :lat %>
+	<%= f.hidden_field :long %>	
+	<%= f.hidden_field :country %>	
+
+	<p>You can change these details at any time.</p>
+
+	<%= render :partial => 'form', :locals => {:f => f} %>
+	
+	<%= form_footer(:pin, :cancel_link => region_path(@pin.region), :requires_login => false) %>
+<% end %>
+

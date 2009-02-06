@@ -4,7 +4,7 @@ var RegionMap = Class.create({
     this.map = null;
     this.boundary = null;
     this.boundary_markers = [];
-    this.pin_markers = [];
+    this.pin_markers = {};
     this.region = region;
     this.boundary_editing = boundary_editing;
   },
@@ -30,7 +30,7 @@ var RegionMap = Class.create({
 
       var marker = new GMarker(point, {title: pin.name, icon: icon});
       this.map.addOverlay(marker);
-      this.pin_markers.push(marker);
+      this.pin_markers[pin.to_param] = marker;
       marker.bindInfoWindowHtml(this.infoWindowHtml(pin));      
     }, this);
   },
@@ -110,5 +110,10 @@ var RegionMap = Class.create({
   				});
 		  }
 		});
+  },
+  
+  centerOnPin: function(pin_id) {
+    var marker = this.pin_markers[pin_id];
+    GEvent.trigger(marker, 'click');
   }
 });

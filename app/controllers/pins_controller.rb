@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
-  before_filter :load_region, :only => [:new]
-  before_filter :load_pin, :only => [:show]
+  before_filter :load_region, :only => [:new, :edit, :update]
+  before_filter :load_pin, :only => [:show, :edit, :update]
   
   def new
     initialize_new_pin
@@ -21,6 +21,12 @@ class PinsController < ApplicationController
   end
   
   def show
+  end
+  
+  def edit
+  end
+  
+  def update
   end
   
   protected

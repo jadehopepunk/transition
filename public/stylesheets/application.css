@@ -177,7 +177,10 @@ div.change_notice .change_time {
   margin-right: 0.5em;
 }
 
-
 .map_explanation {
   float: left;
+}
+
+.map_explanation h3 {
+  margin-top: 0;
 }

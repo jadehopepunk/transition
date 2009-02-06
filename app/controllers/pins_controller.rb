@@ -27,6 +27,13 @@ class PinsController < ApplicationController
   end
   
   def update
+    @pin.update_attributes(params[:pin])
+
+    if @pin.valid?
+      redirect_to region_pin_path(@pin.region, @pin)
+    else
+      render :action => :edit
+    end
   end
   
   protected

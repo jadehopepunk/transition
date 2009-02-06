@@ -4,4 +4,13 @@
 
 <%= simple_format(h(@pin.description)) %>
 
-<%= address_to_html(@pin) %>
+<p>
+	<%= address_to_html(@pin) %>
+</p>
+
+<p>
+	<% links = [] 
+	   links << link_to("Back to #{@pin.region.name} map", region_path(@pin.region))
+	   links << link_to("Edit these details", edit_region_pin_path(@pin.region, @pin)) if @pin.can_be_edited_by?(current_user) %>
+	<%= links.join(' | ') %>
+</p>

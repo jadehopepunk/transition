@@ -78,6 +78,10 @@ class Pin < ActiveRecord::Base
       humanize_resource_type(resource_type)
     end
   end
+  
+  def can_be_edited_by?(current_user)
+    user && current_user == user
+  end
 
   protected
   

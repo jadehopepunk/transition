@@ -1,11 +1,12 @@
 # == Schema Info
-# Schema version: 20081209070454
+# Schema version: 20090206022108
 #
 # Table name: pins
 #
 #  id                    :integer(4)      not null, primary key
 #  region_id             :integer(4)
 #  user_id               :integer(4)
+#  added_by_admin        :boolean(1)
 #  city                  :string(255)
 #  code                  :integer(4)
 #  colour                :string(255)
@@ -23,6 +24,7 @@
 #  sell_food             :boolean(1)
 #  street_address        :string(255)
 #  suburb                :string(255)
+#  version               :integer(4)
 #  created_at            :datetime
 #  updated_at            :datetime
 
@@ -31,6 +33,7 @@ class Pin < ActiveRecord::Base
   COLOURS = [:green, :yellow, :blue, :red, :purple]
   
   acts_as_versioned
+  self.non_versioned_columns << 'added_by_admin'
   
   belongs_to :region
   belongs_to :user
@@ -43,6 +46,7 @@ class Pin < ActiveRecord::Base
   
   before_validation_on_create :assign_colour
   before_save :set_user_from_email
+  after_create :send_pin_email
   
   def self.find_by_param(param)
     unless param.blank?
@@ -123,6 +127,10 @@ class Pin < ActiveRecord::Base
       if email_address && !user
         self.user = User.find_by_email_address(email_address) || User.create(:email_address => email_address, :name => name)
       end
+    end
+    
+    def send_pin_email
+      PinEmail.pin_created(self)
     end
   
 end

@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090206020054) do
+ActiveRecord::Schema.define(:version => 20090206024400) do
+
+  create_table "pin_emails", :force => true do |t|
+    t.integer  "pin_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pin_emails", ["pin_id"], :name => "pin_id"
+  add_index "pin_emails", ["user_id"], :name => "user_id"
 
   create_table "pin_versions", :force => true do |t|
     t.integer  "pin_id"
@@ -61,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20090206020054) do
     t.integer  "user_id"
     t.integer  "region_id"
     t.integer  "version"
+    t.boolean  "added_by_admin",        :default => false
   end
 
   add_index "pins", ["user_id"], :name => "user_id"
@@ -110,6 +121,9 @@ ActiveRecord::Schema.define(:version => 20090206020054) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_foreign_key "pin_emails", ["pin_id"], "pins", ["id"], :name => "pin_emails_ibfk_1"
+  add_foreign_key "pin_emails", ["user_id"], "users", ["id"], :name => "pin_emails_ibfk_2"
 
   add_foreign_key "pin_versions", ["pin_id"], "pins", ["id"], :name => "pin_versions_ibfk_1"
 

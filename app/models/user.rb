@@ -1,5 +1,5 @@
 # == Schema Info
-# Schema version: 20081209070454
+# Schema version: 20090206022108
 #
 # Table name: users
 #
@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   
   has_many :pins, :dependent => :destroy
   
+  before_create :generate_auth_token
+  
   def self.authenticate(email_address, password)
     User.find(:first, :conditions => {:emaiL_address => email_address, :password => password})
   end
@@ -27,4 +29,15 @@ class User < ActiveRecord::Base
     pins.first
   end
   
+  def approved?
+    !!password
+  end
+  
+  protected
+  
+    def generate_auth_token
+      timestamp = Time.now.utc.to_i.to_s
+      plaintext = timestamp + email_address
+      self.auth_token = Digest::MD5.hexdigest(plaintext).strip      
+    end
 end

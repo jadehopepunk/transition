@@ -25,6 +25,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   map.resources :pin_images
+  map.resources :users, :member => {:approve => :get}
   map.resource :session
   
   map.resources :regions do |region| 

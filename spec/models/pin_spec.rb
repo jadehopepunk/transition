@@ -1,11 +1,12 @@
 # == Schema Info
-# Schema version: 20081209070454
+# Schema version: 20090206022108
 #
 # Table name: pins
 #
 #  id                    :integer(4)      not null, primary key
 #  region_id             :integer(4)
 #  user_id               :integer(4)
+#  added_by_admin        :boolean(1)
 #  city                  :string(255)
 #  code                  :integer(4)
 #  colour                :string(255)
@@ -23,6 +24,7 @@
 #  sell_food             :boolean(1)
 #  street_address        :string(255)
 #  suburb                :string(255)
+#  version               :integer(4)
 #  created_at            :datetime
 #  updated_at            :datetime
 

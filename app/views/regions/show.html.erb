@@ -18,7 +18,9 @@
 <% content_for :body_unload, "GUnload()" %>
 
 <br style="clear: both" />
-<div id="map" class="google_map" style="width: 400px; height: 500px; float: left; margin: 0 10px 10px 0"></div>
+<div class="map_section" style="float: left">
+	<div id="map" class="google_map" style="width: 400px; height: 500px; margin: 0 10px 10px 0"></div>
+</div>
 
 <div class="map_explanation">
 	<% if false %>
@@ -47,7 +49,8 @@
 
 		<p>Do you grow, cook or sell food, or provide resources to help others who do? If so, then
 		<%= link_to "click here", new_region_pin_path(@region) %> to tell your 
-		local community about it.
+		local community about it.</p>
+		
 	<% end %>	
 </div>
 

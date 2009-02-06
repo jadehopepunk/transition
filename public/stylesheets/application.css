@@ -179,6 +179,7 @@ div.change_notice .change_time {
 
 .map_explanation {
   float: left;
+  width: 400px;
 }
 
 .map_explanation h3 {

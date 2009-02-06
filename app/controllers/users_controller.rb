@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_filter :load_user
   
   def approve
+    @user.approve_token = params[:code]
     render :layout => 'minimal'
   end
   

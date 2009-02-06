@@ -1,0 +1,23 @@
+
+<h2>Create a new Map Pin</h2>
+
+<% form_for :pin, :url => region_admin_region_pins_path(@region), :method => :post, :builder => LabelledBuilder, :html => {:onsubmit => "map.writeLatLong('pin_lat', 'pin_long'); return true;"} do |f| %>
+	<%= f.hidden_field :region_id %>
+	<%= f.hidden_field :lat %>
+	<%= f.hidden_field :long %>	
+	<%= f.hidden_field :country %>	
+
+	<h3>Pin Numbering</h3>
+
+	<p>These two fields only need to be specified if you want to force the pin to display a particular
+	number and colour, in order to make it match a physical map. Otherwise, leave them blank, and we'll
+	assign them the correct colour and the next number available.</p>
+
+	<%= f.text_field :code, :label => "Pin Number" %>
+	<%= f.select :colour, Pin::COLOURS, :include_blank => true, :label => "Pin Colour" %>
+
+	<%= render :partial => 'pins/form', :locals => {:f => f} %>
+	
+	<%= form_footer(:pin, :cancel_link => region_admin_region_pins_path(@region)) %>
+<% end %>
+

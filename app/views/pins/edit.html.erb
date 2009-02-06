@@ -9,7 +9,7 @@
 
 	<p>You can change these details at any time.</p>
 
-	<%= render :partial => 'form', :locals => {:f => f} %>
+	<%= render :partial => 'pins/form', :locals => {:f => f} %>
 	
 	<%= form_footer(:pin, :cancel_link => region_path(@pin.region), :requires_login => false) %>
 <% end %>

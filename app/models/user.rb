@@ -14,7 +14,7 @@
 
 class User < ActiveRecord::Base
   attr_protected :is_admin  
-  attr_accessor :password_confirmation, :approving
+  attr_accessor :password_confirmation, :approving, :approve_token
   
   validates_presence_of :email_address
   validates_uniqueness_of :email_address
@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, :if => :approving
   
   has_many :pins, :dependent => :destroy
+  has_many :region_privileges, :dependent => :destroy
   
   before_create :generate_auth_token
   
@@ -38,8 +39,14 @@ class User < ActiveRecord::Base
   end
   
   def approve(params)
-    self.approving = true
-    update_attributes(params)
+    if params['approve_token'] == auth_token
+      self.approving = true
+      update_attributes(params)
+    end
+  end
+  
+  def is_region_admin?
+    !region_privileges.empty?
   end
   
   protected

@@ -113,7 +113,7 @@ class Pin < ActiveRecord::Base
     end
     
     def assign_colour      
-      self.colour = COLOURS[RESOURCE_TYPES.index(first_resource_type)].to_s if first_resource_type
+      self.colour = COLOURS[RESOURCE_TYPES.index(first_resource_type)].to_s if first_resource_type && colour.blank?
       assign_code
     end
     

@@ -1,0 +1,18 @@
+<h2>Map Pins</h2>
+
+<div class="record_index">
+	<% for pin in @pins %>
+		<div class="record_row">
+			<span class="info">
+				<%= link_to h(pin.name), region_pin_path(pin.region, pin) %>
+				(<%= pin.to_param %>)
+			</span>
+			<span class="buttons">
+				<%= link_to "edit", edit_region_admin_region_pin_path(@region, pin) %>
+				<%= link_to "delete", region_admin_region_pin_path(@region, pin), :method => :delete, :confirm => "Are you sure??!" %>
+			</span>
+		</div>
+	<% end %>
+</div>
+
+<%= link_to "Create New", new_region_admin_region_pin_path(@region) %>

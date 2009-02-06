@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Transition Towns Admin</title>
+		<%= stylesheet_link_tag 'application', 'forms', 'admin', :cache => false %>	
+		<%= render :partial => 'layouts/head' %>
+		<%= yield :head %>
+	</head>
+	<body onload="<%= yield :body_load %>" onunload="<%= yield :body_unload %>">
+		<div class="header">
+			<%= render :partial => 'layouts/login_details' %>
+			<h1>Admin</h1>
+		</div>
+		<div class="header_tabs">
+			<ul>
+				<% for model in available_region_admin_controllers %>
+					<% active = (params[:controller] == "admin/#{model}") %>
+					<%= content_tag 'li', link_to(model.to_s.humanize, send("region_admin_region_#{model}_path".to_sym, @region)), :class => (active ? 'active' : nil) %>
+				<% end %>
+			</ul>			
+		</div>
+		<div class="body_container">
+			<div class="page_content">
+				<%= yield %>
+			</div>
+		</div>
+		<div class="page_footer">
+			<%= link_to "Got to main site", '/' %>
+		</div>	
+	</body>
+</html>

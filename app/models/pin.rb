@@ -30,6 +30,8 @@ class Pin < ActiveRecord::Base
   RESOURCE_TYPES = [:grow_food, :make_food, :sell_food, :gardening_instruction, :gardening_products]
   COLOURS = [:green, :yellow, :blue, :red, :purple]
   
+  acts_as_versioned
+  
   belongs_to :region
   belongs_to :user
   

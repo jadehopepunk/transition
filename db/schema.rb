@@ -9,7 +9,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081209070454) do
+ActiveRecord::Schema.define(:version => 20090206020054) do
+
+  create_table "pin_versions", :force => true do |t|
+    t.integer  "pin_id"
+    t.integer  "version"
+    t.boolean  "grow_food"
+    t.boolean  "make_food"
+    t.boolean  "sell_food"
+    t.boolean  "gardening_instruction"
+    t.boolean  "gardening_products"
+    t.text     "description"
+    t.string   "group_type"
+    t.string   "name"
+    t.string   "street_address"
+    t.string   "suburb"
+    t.string   "city"
+    t.string   "email_address"
+    t.string   "country"
+    t.float    "lat"
+    t.float    "long"
+    t.datetime "updated_at"
+    t.string   "colour"
+    t.integer  "code"
+    t.integer  "user_id"
+    t.integer  "region_id"
+  end
+
+  add_index "pin_versions", ["pin_id"], :name => "index_pin_versions_on_pin_id"
 
   create_table "pins", :force => true do |t|
     t.boolean  "grow_food"
@@ -33,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20081209070454) do
     t.integer  "code"
     t.integer  "user_id"
     t.integer  "region_id"
+    t.integer  "version"
   end
 
   add_index "pins", ["user_id"], :name => "user_id"
@@ -82,6 +110,8 @@ ActiveRecord::Schema.define(:version => 20081209070454) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_foreign_key "pin_versions", ["pin_id"], "pins", ["id"], :name => "pin_versions_ibfk_1"
 
   add_foreign_key "pins", ["user_id"], "users", ["id"], :name => "pins_ibfk_2"
   add_foreign_key "pins", ["region_id"], "regions", ["id"], :name => "pins_ibfk_3"

@@ -14,8 +14,12 @@
 
 class User < ActiveRecord::Base
   attr_protected :is_admin  
+  attr_accessor :password_confirmation, :approving
+  
   validates_presence_of :email_address
   validates_uniqueness_of :email_address
+  validates_presence_of :password, :if => :approving
+  validates_confirmation_of :password, :if => :approving
   
   has_many :pins, :dependent => :destroy
   
@@ -31,6 +35,11 @@ class User < ActiveRecord::Base
   
   def approved?
     !!password
+  end
+  
+  def approve(params)
+    self.approving = true
+    update_attributes(params)
   end
   
   protected

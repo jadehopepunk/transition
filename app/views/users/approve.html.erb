@@ -1,0 +1,12 @@
+<h2>Choose a Password</h2>
+
+<p>You're logging in for the first time, so you'll need to choose a password.</p>
+
+<% form_for :user, :url => update_password_user_path(@user), :html => {:method => :put}, :builder => LabelledBuilder do |f| %>
+	<%= f.password_field(:password) %>
+
+	<%= f.password_field(:password_confirmation, :label => "Type it again", :hint => "just to make sure") %>
+
+	<%= form_footer(:user, :cancel_link => '/', :requires_login => false) %>
+<% end %>
+

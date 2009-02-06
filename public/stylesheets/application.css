@@ -58,6 +58,11 @@ a:hover {
   margin: 0 auto;
 }
 
+body.minimal .page_content {
+  width: 500px;
+  margin: 0 auto;
+}
+
 .draft {
   color: #999;
   text-align: center;

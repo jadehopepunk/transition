@@ -30,7 +30,7 @@
 
 class Pin < ActiveRecord::Base
   RESOURCE_TYPES = [:grow_food, :make_food, :sell_food, :gardening_instruction, :gardening_products]
-  COLOURS = [:green, :yellow, :blue, :red, :purple]
+  COLOURS = [:green, :yellow, :red, :blue, :purple]
   
   acts_as_versioned
   self.non_versioned_columns << 'added_by_admin'

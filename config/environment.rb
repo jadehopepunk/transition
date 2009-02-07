@@ -51,7 +51,7 @@ Rails::Initializer.run do |config|
     :session_key => '_transition_session',
     :secret      => '9008edaccf52e237d5051654f1dd7f5dfeae092779a55cd4123bb0d493b13581634fe19c32192a3a4e818e8babbd93860dd1ca748848c713b840871665faec45'
   }
-
+    
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
@@ -65,6 +65,8 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
 end
+
+ActionController::UrlWriter.default_url_options[:host] = "map.swanson.org.nz"
 
 require 'ostruct'
 require 'yaml'

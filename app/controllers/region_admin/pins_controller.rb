@@ -29,11 +29,12 @@ class RegionAdmin::PinsController < RegionAdmin::RegionAdminController
   end
   
   def create
-    @pin = Pin.create(params[:pin])
-    if @pin.new_record?
-      render :action => :new
-    else
+    @pin = Pin.new(params[:pin])
+    @pin.added_by_admin = true
+    if @pin.save
       redirect_to :action => :index
+    else
+      render :action => :new
     end
   end
   

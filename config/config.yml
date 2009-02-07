@@ -1,5 +1,6 @@
 common: 
   google_maps_key: ABQIAAAAeBPm_-KwgwjbZtYJENq_NxTJQa0g3IQ9GZqIMmInSLzwtGDKaBQEQ8RImFMMzng2wJSj--82s0XpKg
+  admin_email: craig@craigambrose.com
   
 production:
   google_maps_key: ABQIAAAAeBPm_-KwgwjbZtYJENq_NxSCoxnm7uBxUhAePM2hkpSLf111nBTZj4Q_FP04U4byjtwI-TDtPy6JVw

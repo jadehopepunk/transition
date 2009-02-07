@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090206024400) do
+ActiveRecord::Schema.define(:version => 20090207010313) do
 
   create_table "pin_emails", :force => true do |t|
     t.integer  "pin_id"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(:version => 20090206024400) do
     t.string   "name"
     t.string   "email_address"
     t.string   "password"
-    t.string   "auth_token"
+    t.string   "validation_code"
     t.boolean  "is_admin"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -11,5 +11,5 @@ http://map.swanson.org.nz
 <% unless @user.approved? -%>
 We encourage you to log-in to the website, so that you can change your details at any time. To do so, click on the link below:
 
-<%= approve_user_url(:id => @user.to_param, :code => @user.auth_token) %>
+<%= approve_user_url(:id => @pin.user.to_param, :approve_token = @pin.user.validation_code) %>
 <% end %>

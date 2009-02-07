@@ -3,6 +3,8 @@
 <p>You're logging in for the first time, so you'll need to choose a password.</p>
 
 <% form_for :user, :url => update_password_user_path(@user), :html => {:method => :put}, :builder => LabelledBuilder do |f| %>
+	<%= error_message_on :user, :validation_code %>
+
 	<%= f.hidden_field :approve_token %>
 	<%= f.password_field(:password) %>
 

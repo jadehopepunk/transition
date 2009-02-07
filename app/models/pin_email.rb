@@ -1,5 +1,5 @@
 # == Schema Info
-# Schema version: 20090206022108
+# Schema version: 20090207010313
 #
 # Table name: pin_emails
 #
@@ -18,8 +18,10 @@ class PinEmail < ActiveRecord::Base
       if pin.email_address
         if pin.added_by_admin
           UserMailer.deliver_pin_created_by_admin(pin)
-          PinEmail.create(:pin => pin, :user => pin.user)
+        else
+          UserMailer.deliver_pin_created_by_user(pin)
         end
+        PinEmail.create(:pin => pin, :user => pin.user)
       end
     end
   rescue Net::SMTPSyntaxError

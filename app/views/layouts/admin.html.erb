@@ -4,7 +4,6 @@
 		<title>Transition Towns Admin</title>
 		<%= stylesheet_link_tag 'application', 'forms', 'admin', :cache => false %>	
 		<%= render :partial => 'layouts/head' %>
-		<%= yield :head %>
 	</head>
 	<body onload="<%= yield :body_load %>" onunload="<%= yield :body_unload %>">
 		<div class="header">

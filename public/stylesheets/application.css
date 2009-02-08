@@ -190,3 +190,9 @@ div.change_notice .change_time {
 .map_explanation h3 {
   margin-top: 0;
 }
+
+.iframe_contents .map_explanation {
+  float: none;
+  width: auto;
+  font-size: 80%;
+}

@@ -1,0 +1,11 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Transition Towns</title>
+		<%= stylesheet_link_tag 'application', 'forms', :cache => true %>	
+		<%= render :partial => 'layouts/head.html.erb' %>
+	</head>
+	<body onload="<%= yield :body_load %>" onunload="<%= yield :body_unload %>">
+		<%= yield %>
+	</body>
+</html>

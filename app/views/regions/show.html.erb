@@ -1,21 +1,4 @@
-<% content_for :head do %>
-	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= AppConfig.google_maps_key %>" type="text/javascript"></script>
-  <script type="text/javascript">
-    //<![CDATA[
-
-		var region_map = new RegionMap("map", <%= @region.to_json %>, false);
-
-    function load() {
-			region_map.load();
-			//region_map.setBoundary(<%= @region.to_json(:include => :vertices) %>);
-			region_map.displayPins(<%= @region.pins.to_json %>);
-    }
-
-    //]]>
-  </script>			
-<% end %>
-<% content_for :body_load, "load()" %>
-<% content_for :body_unload, "GUnload()" %>
+<%= render :partial => 'map' %>
 
 <br style="clear: both" />
 <div class="map_section" style="float: left">

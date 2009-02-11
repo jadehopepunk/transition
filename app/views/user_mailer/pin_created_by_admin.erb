@@ -6,7 +6,7 @@ You don't have to do anything.
 
 We hope this map will help to demonstrate the great things happening in <%= @pin.region.name %>, and encourage people to celebrate local food and skills. You can look at the map anytime as it grows, by visiting it online at:
 
-http://map.swanson.org.nz
+<%= url_for(:only_path => false, :controller => 'regions', :id => @pin.region) %>
 
 <% unless @user.approved? -%>
 We encourage you to log-in to the website, so that you can change your details at any time. To do so, click on the link below:

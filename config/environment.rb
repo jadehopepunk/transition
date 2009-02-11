@@ -66,7 +66,13 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
 end
 
-ActionController::UrlWriter.default_url_options[:host] = "map.swanson.org.nz"
+ActionController::UrlWriter.default_url_options[:host] = "maps.transitiontowns.org.nz"
+
+GOOGLE_MAPS_KEYS = {
+  "maps.transitiontowns.org.nz" => "ABQIAAAAeBPm_-KwgwjbZtYJENq_NxRcKxkoBfal55ZfotJlQLmBZmTm3xQunu9dMcsnu5dY-hQW9PXU3uvEQA",
+  "localhost" => "ABQIAAAAeBPm_-KwgwjbZtYJENq_NxTJQa0g3IQ9GZqIMmInSLzwtGDKaBQEQ8RImFMMzng2wJSj--82s0XpKg",
+  "map.swanson.org.nz" => "ABQIAAAAeBPm_-KwgwjbZtYJENq_NxSCoxnm7uBxUhAePM2hkpSLf111nBTZj4Q_FP04U4byjtwI-TDtPy6JVw"
+}
 
 require 'ostruct'
 require 'yaml'

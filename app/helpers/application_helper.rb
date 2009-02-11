@@ -13,5 +13,9 @@ module ApplicationHelper
       end
     end
   end
+  
+  def google_maps_key
+    GOOGLE_MAPS_KEYS[request.host] || GOOGLE_MAPS_KEYS.values.first
+  end
     
 end

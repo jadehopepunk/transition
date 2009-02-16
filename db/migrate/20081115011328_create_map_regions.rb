@@ -1,6 +1,6 @@
 class CreateMapRegions < ActiveRecord::Migration
   def self.up
-    create_table :map_regions do |t|
+    create_table :regions do |t|
       t.string :name
 
       t.timestamps
@@ -8,6 +8,6 @@ class CreateMapRegions < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :map_regions
+    drop_table :regions
   end
 end

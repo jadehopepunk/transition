@@ -1,3 +1,17 @@
 form .footer {
   display: none;
 }
+
+input.text_field {
+  display: block;
+  line-height: 3em;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 2px solid black;
+}
+
+textarea {
+  border: 2px solid black;
+  width: 100%;
+}

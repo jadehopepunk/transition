@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       render :action => 'approve', :layout => 'minimal'
     end
   end
-  
+    
   protected
   
     def load_user

@@ -94,7 +94,7 @@ var PointSelectionMap = Class.create({
       $(lat_id).value = point.lat();
       $(long_id).value = point.lng();      
     }
-  },
+  }
     
   
 });

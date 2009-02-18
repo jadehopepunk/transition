@@ -9,9 +9,9 @@ set :repository, "git://github.com/craigambrose/transition.git"
 set :scm_verbose, true
 default_run_options[:pty] = true
 
-role :app, "tt.craigambrose.com"
-role :web, "tt.craigambrose.com"
-role :db,  "tt.craigambrose.com", :primary => true
+role :app, "maps.transitiontowns.org.nz"
+role :web, "maps.transitiontowns.org.nz"
+role :db,  "maps.transitiontowns.org.nz", :primary => true
 
 after "deploy:update_code", "db:symlink"
 after "deploy", "deploy:cleanup"

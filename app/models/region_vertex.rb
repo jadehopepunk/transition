@@ -12,8 +12,8 @@
 #  updated_at    :datetime
 
 class RegionVertex < ActiveRecord::Base
-  belongs_to :region, :foreign_key => :map_region_id
-  acts_as_list :scope => :map_region_id
+  belongs_to :region, :foreign_key => :region_id
+  acts_as_list :scope => :region_id
   composed_of :latlong, :mapping => [%w(long long), %w(lat lat)], :class_name => Math::Latlong.name {|vertex| Math::Latlong.new(vertex.long, vertex.lat) }
   
   validates_presence_of :region, :lat, :long

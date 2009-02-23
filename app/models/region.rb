@@ -15,7 +15,7 @@
 #  updated_at   :datetime
 
 class Region < ActiveRecord::Base
-  has_many :vertices, :class_name => RegionVertex.name, :dependent => :destroy, :order => "position ASC", :extend => VertexCollection, :foreign_key => :map_region_id
+  has_many :vertices, :class_name => RegionVertex.name, :dependent => :destroy, :order => "position ASC", :extend => VertexCollection, :foreign_key => :region_id
   has_many :pins
 
   validates_presence_of :name, :center_lat, :center_lon, :default_zoom, :country

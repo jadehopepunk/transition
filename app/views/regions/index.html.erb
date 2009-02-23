@@ -1,0 +1,9 @@
+<h2>Regions with local food maps</h2>
+
+<ul>
+	<% for region in @regions %>
+		<li>
+			<%= link_to region.name, region_path(region) %>
+		</li>
+	<% end %>
+</ul>

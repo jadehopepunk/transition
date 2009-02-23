@@ -1,7 +1,7 @@
 <div class="iframe_contents">
 	<%= render :partial => 'map.html.erb' %>
 	
-	<div id="map" class="google_map" style="width: 350px; height: 300px; margin: 0 0 10px 0"></div>
+	<div id="map" class="google_map" style="width: <%= params['width'] || '350' %>px; height: <%= params['height'] || '300' %>px; margin: 0 0 10px 0"></div>
 
 
 	<div class="map_explanation">

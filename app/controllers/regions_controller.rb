@@ -4,6 +4,10 @@ class RegionsController < ApplicationController
   def show
   end
   
+  def index
+    @regions = Region.find(:all)
+  end
+  
   protected
   
     def load_region
@@ -11,7 +15,7 @@ class RegionsController < ApplicationController
     end
 
     def title
-      "Local food in #{@region.name}"
+      @region ? "Local food in #{@region.name}" : "Local food maps"
     end
   
 end

@@ -39,7 +39,7 @@ class Pin < ActiveRecord::Base
   belongs_to :user
   
   validate :has_a_resource_type
-  validates_presence_of :name, :region, :street_address, :suburb, :city, :country
+  validates_presence_of :name, :region, :street_address, :country
   validates_presence_of :lat, :long, :colour, :code
   validates_inclusion_of :colour, :in => COLOURS.map(&:to_s)
   validates_uniqueness_of :code, :scope => [:region_id, :colour]

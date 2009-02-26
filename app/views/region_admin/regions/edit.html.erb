@@ -1,0 +1,5 @@
+<h2>Edit Map Region</h2>
+
+<% form_for :region, :url => region_admin_region_path(@region), :html => {:method => :put}, :builder => LabelledBuilder do |f| %>
+	<%= render :partial => 'admin/regions/form', :locals => {:f => f} %>
+<% end %>

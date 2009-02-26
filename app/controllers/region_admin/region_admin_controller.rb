@@ -1,5 +1,6 @@
 class RegionAdmin::RegionAdminController < ApplicationController
   layout 'region_admin'
+  include CrudControllerMethods
   before_filter :load_region
   before_filter :region_admin_required
   
@@ -14,7 +15,7 @@ class RegionAdmin::RegionAdminController < ApplicationController
     end
     
     def load_region
-      @region = Region.find_by_param(params[:region_id])
+      @region = Region.find_by_param(params[:region_id]) unless @region
     end
   
 end

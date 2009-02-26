@@ -17,6 +17,8 @@
 class Region < ActiveRecord::Base
   has_many :vertices, :class_name => RegionVertex.name, :dependent => :destroy, :order => "position ASC", :extend => VertexCollection, :foreign_key => :region_id
   has_many :pins
+  has_many :region_privileges
+  has_many :administrators, :through => :region_privileges, :class_name => 'User', :source => :user
 
   validates_presence_of :name, :center_lat, :center_lon, :default_zoom, :country
   has_permalink :name, :unique => true
@@ -38,5 +40,5 @@ class Region < ActiveRecord::Base
   def has_country?
     !country.blank?
   end
-  
+    
 end

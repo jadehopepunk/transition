@@ -196,3 +196,11 @@ div.change_notice .change_time {
   width: auto;
   font-size: 80%;
 }
+
+table.admin_record_details {
+  border: 0;
+}
+
+table.admin_record_details td.label {
+  font-weight: bold;
+}

@@ -13,6 +13,8 @@
 		</div>
 		<div class="header_tabs">
 			<ul>
+				<%= content_tag 'li', link_to('Map Settings', region_admin_region_path(@region)), :class => (params[:controller] == "region_admin/regions" ? 'active' : nil) %>
+				
 				<% for model in available_region_admin_controllers %>
 					<% active = (params[:controller] == "admin/#{model}") %>
 					<%= content_tag 'li', link_to(model.to_s.humanize, send("region_admin_region_#{model}_path".to_sym, @region)), :class => (active ? 'active' : nil) %>

@@ -1,0 +1,30 @@
+<h2>About your Map</h2>
+
+<table class="admin_record_details">
+	<tbody>
+		<tr>
+			<td class="label">Name:</td>
+			<td><%=h @region.name %></td>
+		</tr>
+		<tr>
+			<td class="label">Url:</td>
+			<td><%= link_to region_url(@region), region_url(@region) %></td>
+		</tr>
+		<tr>
+			<td class="label">City:</td>
+			<td><%=h @region.city %></td>
+		</tr>
+		<tr>
+			<td class="label">Country:</td>
+			<td><%=h @region.country %></td>
+		</tr>
+		<tr>
+			<td class="label">Administrators: </td>
+			<td><%= @region.administrators.map{ |user| link_to(h(user.name), "mailto:#{h(user.email_address)}") }.to_sentence %></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>
+	<%= link_to "Edit Your Map", edit_region_admin_region_path(@region) %>
+</p>

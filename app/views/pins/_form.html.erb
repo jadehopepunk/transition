@@ -58,14 +58,9 @@
 
 <%= f.text_field :street_address, :onblur => "map.updateStreetAddress(this.value);", :onchange => "checkMapSectionDisplay();" %>
 
-<%= f.text_field :suburb, :onblur => "map.updateSuburb(this.value);", :onchange => "checkMapSectionDisplay();" %>
+<%= f.text_field :suburb, :onblur => "map.updateSuburb(this.value);", :onchange => "checkMapSectionDisplay();", :label => "Suburb/Town" %>
 
-<% if @pin.region.has_city? %>
-	<%= f.text_field :city, :value => @pin.region.city, :onblur => "map.updateCity(this.value);", :onchange => "checkMapSectionDisplay();" %>
-<% else %>
-	<%= f.text_field :city, :onblur => "map.updateCity(this.value);", :onchange => "checkMapSectionDisplay();" %>
-<% end %>
-
+<%= f.text_field :city, :value => @pin.region.city, :onblur => "map.updateCity(this.value);", :onchange => "checkMapSectionDisplay();", :label => "City/State/Region" %>
 
 <div id="map_section" style="display: none">
 	<h3>Putting you on our map</h3>

@@ -19,4 +19,8 @@ class AreasController < ApplicationController
       @area = @region.areas.find_by_param(params[:id])
     end
   
+    def title
+      @area ? "Local food around #{@area.name}" : "Local food maps"
+    end
+  
 end

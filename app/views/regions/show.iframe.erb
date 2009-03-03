@@ -10,7 +10,7 @@
 
 		<p>Do you grow, cook or sell food, or provide resources to help others who do? If so, then
 		<%= link_to "click here", new_region_pin_url(@region), :target => '_blank' %> to tell your 
-		local community about it, or <%= link_to "explore the map here", (@area ? region_area_url(@region, @area) : region_url(@region), :target => '_blank') %>.</p>
+		local community about it, or <%= link_to "explore the map here", (@area ? region_area_url(@region, @area) : region_url(@region)), :target => '_blank' %>.</p>
 
 	</div>
 

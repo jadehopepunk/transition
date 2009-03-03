@@ -1,5 +1,5 @@
 # == Schema Info
-# Schema version: 20090207010313
+# Schema version: 20090303034616
 #
 # Table name: regions
 #
@@ -19,6 +19,7 @@ class Region < ActiveRecord::Base
   has_many :pins
   has_many :region_privileges
   has_many :administrators, :through => :region_privileges, :class_name => 'User', :source => :user
+  has_many :areas
 
   validates_presence_of :name, :center_lat, :center_lon, :default_zoom, :country
   has_permalink :name, :unique => true
@@ -39,6 +40,10 @@ class Region < ActiveRecord::Base
   
   def has_country?
     !country.blank?
+  end
+  
+  def build_area
+    areas.build(:center_lat => center_lat, :center_lon => center_lon, :default_zoom => default_zoom)
   end
     
 end

@@ -18,7 +18,7 @@
 					<% end %>
 					<% if current_user.is_region_admin? %>
 						<% for region in current_user.region_privileges.map(&:region) %>
-							<%= link_to "Administer #{region.name}", region_admin_region_pins_path(region) %>
+							<%= link_to "Administer #{region.name}", region_admin_region_path(region) %>
 						<% end %>
 					<% end %>
 				<% else %>

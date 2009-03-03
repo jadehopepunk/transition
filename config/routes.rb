@@ -43,6 +43,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :region_admin do |region_admin|
     region_admin.resources :regions do |regions|
       regions.resources :pins
+      regions.resources :areas
     end
   end
 

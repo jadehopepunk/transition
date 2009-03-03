@@ -1,0 +1,5 @@
+<h2>New Area in <%=h @region.name %></h2>
+
+<% form_for :area, :url => region_admin_region_areas_path(@region), :method => :post, :builder => LabelledBuilder do |f| %>
+	<%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>

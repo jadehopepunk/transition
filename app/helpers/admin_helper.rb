@@ -5,7 +5,7 @@ module AdminHelper
   end
 
   def available_region_admin_controllers
-    results = [:pins]
+    results = [:pins, :areas]
   end
     
 end

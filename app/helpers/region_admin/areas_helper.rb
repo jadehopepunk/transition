@@ -1,0 +1,2 @@
+module RegionAdmin::AreasHelper
+end

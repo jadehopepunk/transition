@@ -1,5 +1,5 @@
 # == Schema Info
-# Schema version: 20090207010313
+# Schema version: 20090303034616
 #
 # Table name: pin_emails
 #
@@ -15,7 +15,7 @@ class PinEmail < ActiveRecord::Base
   
   def self.pin_created(pin)
     unless exists_for_pin?(pin)
-      if !pin.email_address.blank? || !pin.user
+      if pin.user
         if pin.added_by_admin
           UserMailer.deliver_pin_created_by_admin(pin)
         else

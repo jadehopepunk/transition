@@ -1,15 +1,15 @@
 # == Schema Info
-# Schema version: 20090207010313
+# Schema version: 20090303034616
 #
 # Table name: region_vertices
 #
-#  id            :integer(4)      not null, primary key
-#  map_region_id :integer(4)      not null
-#  lat           :float
-#  long          :float
-#  position      :integer(4)
-#  created_at    :datetime
-#  updated_at    :datetime
+#  id         :integer(4)      not null, primary key
+#  region_id  :integer(4)      not null
+#  lat        :float
+#  long       :float
+#  position   :integer(4)
+#  created_at :datetime
+#  updated_at :datetime
 
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 

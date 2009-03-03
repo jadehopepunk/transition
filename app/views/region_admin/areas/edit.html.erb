@@ -1,0 +1,5 @@
+<h2>Edit Area in <%=h @region.name %></h2>
+
+<% form_for :area, :url => region_admin_region_area_path(@region, @area), :html => {:method => :put}, :builder => LabelledBuilder do |f| %>
+	<%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>

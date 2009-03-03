@@ -18,11 +18,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Area do
   before(:each) do
-    @valid_attributes = {
-    }
   end
 
   it "should create a new instance given valid attributes" do
-    Area.create!(@valid_attributes)
+    model_factory.area
   end
 end

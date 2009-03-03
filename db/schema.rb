@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090207010313) do
+ActiveRecord::Schema.define(:version => 20090303034616) do
+
+  create_table "areas", :force => true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.float    "center_lat"
+    t.float    "center_lon"
+    t.integer  "default_zoom"
+    t.integer  "region_id"
+    t.boolean  "show_on_index", :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "areas", ["region_id"], :name => "region_id"
 
   create_table "pin_emails", :force => true do |t|
     t.integer  "pin_id"
@@ -121,6 +135,8 @@ ActiveRecord::Schema.define(:version => 20090207010313) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_foreign_key "areas", ["region_id"], "regions", ["id"], :name => "areas_ibfk_1"
 
   add_foreign_key "pin_emails", ["pin_id"], "pins", ["id"], :name => "pin_emails_ibfk_1"
   add_foreign_key "pin_emails", ["user_id"], "users", ["id"], :name => "pin_emails_ibfk_2"

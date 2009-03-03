@@ -11,6 +11,10 @@ module ModelFactoryMixin
       create Region, options, :name => "Waitakere#{next_integer}", :city => 'Waitakere', :country => 'New Zealand', :center_lat => 1.0, :center_lon => 1.0, :default_zoom => 5
     end
     
+    def area(options = {})
+      create Area, options, :name => "Swanson#{next_integer}", :center_lat => 1.0, :center_lon => 1.0, :default_zoom => 5, :region => (options[:region] || region)
+    end
+    
     def pin(options = {})
       create Pin, options, :name => "Craig's Vegie Garden",
         :grow_food => true,

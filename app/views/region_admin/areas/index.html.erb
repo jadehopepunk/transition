@@ -9,7 +9,7 @@ provide a way for people to jump to those important parts of the map.</p>
 		<div class="record_row">
 			<span class="info"><%= h(area.name) %></span>
 			<span class="buttons">
-				<%= link_to "view", '#' %>
+				<%= link_to "view", region_area_path(@region, area) %>
 				<%= link_to "edit", edit_region_admin_region_area_path(@region, area) %>
 				<%= link_to "delete", region_admin_region_area_path(@region, area), :method => :delete, :confirm => "Are you sure??!" %>
 			</span>

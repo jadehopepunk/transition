@@ -1,4 +1,4 @@
-<%= render :partial => 'map' %>
+<%= render :partial => 'regions/map' %>
 
 <br style="clear: both" />
 <div class="map_section" style="float: left">
@@ -6,14 +6,6 @@
 </div>
 
 <div class="map_explanation">
-	<% if false %>
-		<h2>We're Moving</h2>
-
-		<p>Sorry, you can't add anything onto this map right now, we're moving it onto a new computer. If you
-		added your pin to the physical map at Swanson market last weekend, you should receive an email from
-		us in a couple of days when the new server is up and working.</p>
-	<% end %>
-
 	<% if logged_in? %>
 		<h3>You're on the map</h3>
 

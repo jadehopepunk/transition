@@ -30,6 +30,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :regions do |region| 
     region.resources :pins, :collection => {:new_printable => :get}
+    region.resources :areas
   end
 
   map.namespace :admin do |admin|

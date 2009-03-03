@@ -3,7 +3,7 @@
   <script type="text/javascript">
     //<![CDATA[
 
-		var region_map = new RegionMap("map", <%= @region.to_json %>, false);
+		var region_map = new RegionMap("map", <%= (@area ? @area : @region).to_json %>, false);
 
     function load() {
 			region_map.load();

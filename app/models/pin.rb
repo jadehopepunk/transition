@@ -97,7 +97,7 @@ class Pin < ActiveRecord::Base
   
   def human_readable_resource_types
     resource_types.map do |resource_type|
-      humanize_resource_type(resource_type)
+      self.class.humanize_resource_type(resource_type)
     end
   end
   

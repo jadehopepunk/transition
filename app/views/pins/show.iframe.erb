@@ -1,0 +1,10 @@
+<h3>I support local food</h3>
+
+<p>We: <%= @pin.human_readable_resource_types.map {|phrase| "<strong>#{phrase}</strong>"}.to_sentence %></p>
+
+<%= simple_format(h(@pin.description)) %>
+
+<p>
+	<%= link_to "Find us on our local food map", @pin.url_on_map, :target => '_blank' %>
+</p>
+

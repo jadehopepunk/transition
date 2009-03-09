@@ -31,8 +31,15 @@ var RegionMap = Class.create({
       var marker = new GMarker(point, {title: pin.name, icon: icon});
       this.map.addOverlay(marker);
       this.pin_markers[pin.to_param] = marker;
-      marker.bindInfoWindowHtml(this.infoWindowHtml(pin));      
+      marker.bindInfoWindowHtml(this.infoWindowHtml(pin));    
     }, this);
+  },
+  
+  centerOnPinIfHash: function() {
+    if (document.location.hash) {
+      param = unescape(document.location.hash.substring(1));
+      this.centerOnPin(param);
+    }
   },
   
   infoWindowHtml: function(pin) {

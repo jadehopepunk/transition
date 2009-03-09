@@ -9,6 +9,7 @@
 			region_map.load();
 			//region_map.setBoundary(<%= @region.to_json(:include => :vertices) %>);
 			region_map.displayPins(<%= @region.pins.to_json %>);
+			region_map.centerOnPinIfHash();
     }
 
     //]]>

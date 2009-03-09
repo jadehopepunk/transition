@@ -73,6 +73,10 @@ class Pin < ActiveRecord::Base
     "/regions/#{region.to_param}/pins/#{to_param}"
   end
   
+  def url_on_map
+    "/regions/#{region.to_param}##{to_param}"
+  end
+  
   def resource_types
     RESOURCE_TYPES.select {|key| send(key)}
   end

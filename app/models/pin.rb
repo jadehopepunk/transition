@@ -70,7 +70,7 @@ class Pin < ActiveRecord::Base
   end
   
   def url
-    "/pins/#{to_param}"
+    "/regions/#{region.to_param}/pins/#{to_param}"
   end
   
   def resource_types

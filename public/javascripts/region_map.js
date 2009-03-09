@@ -5,6 +5,7 @@ var RegionMap = Class.create({
     this.boundary = null;
     this.boundary_markers = [];
     this.pin_markers = {};
+    this.pin_details = [];
     this.region = region;
     this.boundary_editing = boundary_editing;
   },
@@ -33,6 +34,26 @@ var RegionMap = Class.create({
       this.pin_markers[pin.to_param] = marker;
       marker.bindInfoWindowHtml(this.infoWindowHtml(pin));    
     }, this);
+    
+    this.pin_details = pins;
+  },
+  
+  showOnlyOneType: function(type_name) {
+    this.pin_details.each(function(pin) {
+      if (pin.resource_types.include(type_name)) {
+        this.showPin(pin.to_param)
+      } else {
+        this.hidePin(pin.to_param);
+      }
+    }, this);
+  },
+  
+  hidePin: function(pin_id) {
+    this.pin_markers[pin_id].hide();
+  },
+  
+  showPin: function(pin_id) {
+    this.pin_markers[pin_id].show();
   },
   
   centerOnPinIfHash: function() {

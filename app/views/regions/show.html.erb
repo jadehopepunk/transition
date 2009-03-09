@@ -1,5 +1,11 @@
 <%= render :partial => 'regions/map' %>
 
+<p>
+	People who:
+	<%= Pin::RESOURCE_TYPES.map { |type| link_to_function(Pin.humanize_resource_type(type), "region_map.showOnlyOneType('#{type}')") }.join(" | ") %>
+</p>
+
+
 <br style="clear: both" />
 <div class="map_section" style="float: left">
 	<div id="map" class="google_map" style="width: 400px; height: 500px; margin: 0 10px 10px 0"></div>

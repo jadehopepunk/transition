@@ -62,7 +62,7 @@ class Pin < ActiveRecord::Base
   end
   
   def to_json(options = {})
-    super(:methods => [:to_param, :url])
+    super(:methods => [:to_param, :url, :resource_types])
   end
   
   def to_param
@@ -91,13 +91,13 @@ class Pin < ActiveRecord::Base
     user && current_user == user
   end
 
+  def self.humanize_resource_type(resource_type)
+    result = resource_type.to_s
+    result = "provide_#{result}" if result.starts_with?('gardening')
+    result.humanize      
+  end
+
   protected
-  
-    def humanize_resource_type(resource_type)
-      result = resource_type.to_s
-      result = "provide_#{result}" if result.starts_with?('gardening')
-      result.humanize      
-    end
   
     def first_resource_type
       for type in RESOURCE_TYPES

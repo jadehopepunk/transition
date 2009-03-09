@@ -1,5 +1,5 @@
 var RegionMap = Class.create({
-  initialize: function(container_id, region, boundary_editing) {
+  initialize: function(container_id, region, boundary_editing, type_colours) {
     this.container_id  = container_id;
     this.map = null;
     this.boundary = null;
@@ -8,6 +8,7 @@ var RegionMap = Class.create({
     this.pin_details = [];
     this.region = region;
     this.boundary_editing = boundary_editing;
+    this.type_colours = type_colours;
   },
 
   load: function() {
@@ -38,22 +39,34 @@ var RegionMap = Class.create({
     this.pin_details = pins;
   },
   
+  showAllTypes: function() {
+    this.pin_details.each(function(pin) {
+      var marker = this.pin_markers[pin.to_param];
+      this.setDefaultColour(marker, pin);
+      marker.show();
+    }, this);    
+  },
+  
   showOnlyOneType: function(type_name) {
     this.pin_details.each(function(pin) {
+      var marker = this.pin_markers[pin.to_param];
       if (pin.resource_types.include(type_name)) {
-        this.showPin(pin.to_param)
+        marker.show();
+        this.setColour(marker, pin, this.type_colours[type_name]);
       } else {
-        this.hidePin(pin.to_param);
+        marker.hide();
       }
     }, this);
   },
   
-  hidePin: function(pin_id) {
-    this.pin_markers[pin_id].hide();
+  setColour: function(marker, pin, colour) {
+    var image_url = "/pin_images/" + colour + "-" + pin.id + '.png';
+    marker.setImage(image_url);    
   },
   
-  showPin: function(pin_id) {
-    this.pin_markers[pin_id].show();
+  setDefaultColour: function(marker, pin) {
+    var image_url = "/pin_images/" + pin.to_param + '.png';
+    marker.setImage(image_url);
   },
   
   centerOnPinIfHash: function() {

@@ -1,7 +1,8 @@
 <%= render :partial => 'regions/map' %>
 
 <p>
-	People who:
+	<%= link_to_function "Show All", "region_map.showAllTypes()" %>,
+	or just people who:
 	<%= Pin::RESOURCE_TYPES.map { |type| link_to_function(Pin.humanize_resource_type(type), "region_map.showOnlyOneType('#{type}')") }.join(" | ") %>
 </p>
 

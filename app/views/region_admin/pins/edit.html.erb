@@ -13,7 +13,7 @@
 	number and colour, in order to make it match a physical map.</p>
 
 	<%= f.text_field :code, :label => "Pin Number" %>
-	<%= f.select :colour, Pin::COLOURS.map(&:to_s), :include_blank => true, :label => "Pin Colour" %>
+	<%= f.select :colour, Pin::COLOURS_FOR_TYPES.values.map(&:to_s), :include_blank => true, :label => "Pin Colour" %>
 
 	<%= render :partial => 'pins/form', :locals => {:f => f} %>
 	

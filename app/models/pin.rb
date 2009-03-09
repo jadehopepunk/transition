@@ -29,9 +29,23 @@
 #  updated_at            :datetime
 
 class Pin < ActiveRecord::Base
-  RESOURCE_TYPES = [:grow_food, :make_food, :sell_food, :gardening_instruction, :gardening_products]
-  COLOURS = [:green, :yellow, :red, :blue, :purple]
   
+  RESOURCE_TYPES = [
+    :grow_food,
+    :make_food,
+    :sell_food,
+    :gardening_instruction,
+    :gardening_products
+  ]
+  
+  COLOURS_FOR_TYPES = {
+    :grow_food => :green,
+    :make_food => :yellow,
+    :sell_food => :red,
+    :gardening_instruction => :blue,
+    :gardening_products => :purple
+  }
+    
   acts_as_versioned
   self.non_versioned_columns << 'added_by_admin'
   
@@ -41,7 +55,7 @@ class Pin < ActiveRecord::Base
   validate :has_a_resource_type
   validates_presence_of :name, :region, :street_address, :country
   validates_presence_of :lat, :long, :colour, :code
-  validates_inclusion_of :colour, :in => COLOURS.map(&:to_s)
+  validates_inclusion_of :colour, :in => COLOURS_FOR_TYPES.values.map(&:to_s)
   validates_uniqueness_of :code, :scope => [:region_id, :colour]
   
   before_validation_on_create :assign_colour
@@ -117,7 +131,7 @@ class Pin < ActiveRecord::Base
     end
     
     def assign_colour      
-      self.colour = COLOURS[RESOURCE_TYPES.index(first_resource_type)].to_s if first_resource_type && colour.blank?
+      self.colour = COLOURS_FOR_TYPES[first_resource_type].to_s if first_resource_type && colour.blank?
       assign_code
     end
     

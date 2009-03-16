@@ -142,7 +142,7 @@ class Pin < ActiveRecord::Base
     end
     
     def set_user_from_email
-      if email_address && !user
+      if !email_address.blank? && !user
         self.user = User.find_by_email_address(email_address) || User.create(:email_address => email_address, :name => name)
       end
     end
